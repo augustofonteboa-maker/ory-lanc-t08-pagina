@@ -856,6 +856,36 @@ dialog .fechar{position:absolute;top:10px;right:10px;width:44px;height:44px;bord
 /* botão do menu só aparece depois que o botão do topo (abaixo do vídeo) sai da tela */
 .topo .mini{max-width:0;padding-inline:0;margin-left:-1rem;opacity:0;overflow:hidden;white-space:nowrap;pointer-events:none;transform:scale(.92);transition:max-width .6s var(--ease-saida),padding .6s var(--ease-saida),margin .6s var(--ease-saida),opacity .4s,transform .5s var(--ease-saida)}
 .topo.com-botao .mini{max-width:340px;padding-inline:1.1rem;margin-left:0;opacity:1;pointer-events:auto;transform:none}
+
+/* ==================== T08 v7 · ajustes de celular ==================== */
+/* hubs: órbita sempre no centro do palco */
+.palco-orbita{position:relative;display:block}
+.orbita-caixa{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--esc,1))}
+@media (max-width:520px){.orbita-caixa{--esc:.68;transform:translate(-50%,-50%) scale(var(--esc))}.palco-orbita{min-height:210px}}
+/* como funciona no celular: 1 e 2 lado a lado, 3 embaixo, cenas centralizadas */
+@media (max-width:760px){
+  .passos.passos2{grid-template-columns:1fr 1fr;gap:.75rem;max-width:30rem}
+  .passos2 .passo2{grid-template-columns:1fr!important;justify-items:center;text-align:center;padding:.8rem .7rem 1rem;gap:.6rem}
+  .passos2 .passo2:nth-child(3){grid-column:1 / -1}
+  .passos2 .cena-p{margin-inline:auto;max-width:100%;height:104px}
+  .passos2 .passo2:nth-child(3) .cena-p{max-width:240px}
+  .passos2 .cena-form{padding:0 .8rem}
+  .passos2 .cc-tela{margin-top:18px}
+  .passos2 .cv-tela{width:min(170px,92%);height:84px}
+  .passos2 .passo2 p{font-size:.85rem;line-height:1.45;max-width:none}
+  .passos2 .n-passo{width:32px;height:32px;font-size:1rem}
+}
+/* menos espaço entre a inscrição e o fecho no celular */
+@media (max-width:640px){
+  #inscricao{padding-bottom:2rem}
+  #fechamento{padding-top:.5rem}
+  #fechamento .fundo-grade__conteudo{padding-block:2rem 3rem!important}
+}
+/* ilha: nunca passa da tela nem vaza a pílula */
+.ilha{box-sizing:border-box;max-width:calc(100vw - 24px)}
+.ilha a{min-width:0;text-align:center;line-height:1.15}
+@media (max-width:420px){.ilha{gap:.5rem;padding:.4rem .4rem .4rem .5rem}.ilha-estrela{width:24px;height:28px;margin-left:.15rem}.ilha a{flex:1 1 auto;white-space:nowrap;padding:.35rem .9rem;min-height:42px;font-size:.78rem}}
+@media (max-width:360px){.ilha a{white-space:normal}}
 </style>
 </head>
 <body>
