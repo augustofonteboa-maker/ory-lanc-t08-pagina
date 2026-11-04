@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="site-versao" content="2026-11-04 · T08 v3">
+<title>Inscrição confirmada · ORAYON · 24/11 às 20h</title>
+<meta name="description" content="A sua inscrição no Lançamento do Ecossistema ORAYON foi feita.">
+<link rel="icon" href="img/logo-orayon-clara.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   ORAYON · T08 · Página de inscrição do evento de 24/11 (sobre o visual da demo Virada de Chave v4)
+   Linguagem da página da Talk Machine (grade, clareira, estrelas, campo de caracteres, frase presa na rolagem,
+   números em contorno, história presa, recibo, ilha) + vidro em camadas + ícones vivos. Cores Orayon V2.
+   ========================================================================== */
+:root{
+  --rosa:#FF3D8B;--azul:#4A66FF;--violeta:#A951C2;--aovivo:#E5252B;--verde:#2FD47A;--laranja:#FF9A3D;
+  --gradiente:linear-gradient(120deg,#5564F8 0%,#A951C2 48%,#FC3E8C 100%);
+  --gradiente-h:linear-gradient(90deg,#5564F8 0%,#A951C2 48%,#FC3E8C 100%);
+  --fonte-titulo:"Funnel Display","Hanken Grotesk",system-ui,sans-serif;
+  --fonte-texto:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --fs-h1:clamp(2.4rem,1.2rem + 4.4vw,4.75rem);--fs-apoio:clamp(1.35rem,1rem + 1.4vw,2.2rem);
+  --fs-mega:clamp(2.4rem,1rem + 5vw,5.4rem);
+  --fs-h2:clamp(1.9rem,1.1rem + 2.3vw,3rem);--fs-h3:clamp(1.35rem,1.1rem + 1vw,1.9rem);
+  --fs-lead:clamp(1.0625rem,1rem + .3vw,1.2rem);--fs-corpo:clamp(1rem,.97rem + .12vw,1.0625rem);
+  --ls-h1:-.04em;--ls-h2:-.035em;
+  --gutter:clamp(1rem,.5rem + 2.5vw,2.5rem);--secao-y:clamp(4.5rem,3rem + 3.5vw,7rem);
+  --container:75rem;--medio:62rem;--estreito:44rem;
+  --raio-2:1rem;--raio-3:1.5rem;--raio-4:2rem;--pilula:999px;
+  --grade-celula:6.25rem;--grade-canto:8.5px;
+  --ease:cubic-bezier(.2,.7,.2,1);--ease-saida:cubic-bezier(.22,1,.36,1);
+  /* vidro */
+  --vidro-fundo:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.02));
+  --vidro-borda:rgba(255,255,255,.12);
+  --vidro-blur:blur(18px) saturate(150%);
+  --vidro-brilho:inset 0 1px 0 rgba(255,255,255,.16),inset 0 0 0 1px rgba(255,255,255,.03);
+}
+:root,[data-tema="escuro"]{
+  --fundo:#0B0B0D;--superficie:#111113;--superficie-2:#16161A;--superficie-3:#26262A;
+  --texto:#fff;--texto-2:#B8B8BD;--texto-3:#7C7C83;--linha:rgba(255,255,255,.1);--linha-grade:rgba(255,255,255,.055);
+  --recibo-sombra:drop-shadow(0 0 1px rgba(255,255,255,.25)) drop-shadow(0 30px 40px rgba(0,0,0,.5));color-scheme:dark;
+}
+[data-tema="claro"]{
+  --fundo:#F7F7FA;--superficie:#fff;--superficie-2:#EDEDF1;--superficie-3:#DDDDE1;
+  --texto:#09090B;--texto-2:#3F3F46;--texto-3:#6B6B75;--linha:rgba(0,0,0,.09);--linha-grade:rgba(0,0,0,.055);
+  --vidro-fundo:linear-gradient(180deg,rgba(255,255,255,.78),rgba(255,255,255,.5));
+  --vidro-borda:rgba(255,255,255,.9);
+  --vidro-brilho:inset 0 1px 0 #fff,0 20px 40px -18px rgba(30,20,60,.18);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#0B0B0D;color:var(--texto-2);font-family:var(--fonte-texto);font-size:var(--fs-corpo);line-height:1.55;letter-spacing:-.005em;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit}
+[hidden]{display:none!important}
+h1,h2,h3,p{margin:0}
+strong{color:var(--texto);font-weight:700}
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
+.medio{max-width:var(--medio)}.estreito{max-width:var(--estreito)}
+.centro{text-align:center}.centro>*{margin-inline:auto}
+.secao{position:relative;background:var(--fundo);color:var(--texto-2);padding-block:var(--secao-y);overflow-x:clip;isolation:isolate}
+.folha{border-radius:var(--raio-4);margin-inline:clamp(0px,.5vw,8px)}
+.titulo{font-family:var(--fonte-titulo);font-size:var(--fs-h2);font-weight:400;line-height:1.04;letter-spacing:var(--ls-h2);color:var(--texto);text-wrap:balance}
+.titulo strong,.titulo b{font-weight:700}
+.lead{font-size:var(--fs-lead);line-height:1.45;letter-spacing:-.01em;color:var(--texto-2);text-wrap:pretty}
+.grad{background:var(--gradiente-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sublinha{background:var(--gradiente-h) no-repeat 0 100%/100% 3px;padding-bottom:.06em}
+.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase}
+.cab{display:grid;gap:1rem}
+.fixo-topo.cab .tag{justify-self:start}
+.cab .lead{max-width:40ch}
+
+/* ==================== VIDRO ==================== */
+.vidro{background:var(--vidro-fundo);border:1px solid var(--vidro-borda);box-shadow:var(--vidro-brilho)}
+.vidro-real{-webkit-backdrop-filter:var(--vidro-blur);backdrop-filter:var(--vidro-blur)}
+[data-tema="escuro"] .vidro{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025)),rgba(18,18,22,.55)}
+@supports not (backdrop-filter:blur(1px)){.vidro{background:var(--superficie-2)}}
+@media (prefers-reduced-transparency:reduce){.vidro{background:var(--superficie-2);backdrop-filter:none}}
+/* manchas de cor atrás do vidro (sem elas o vidro não aparece) */
+.aurora{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aurora i{position:absolute;width:var(--t,46vmax);aspect-ratio:1;border-radius:50%;opacity:var(--o,.35);background:radial-gradient(circle,var(--cor) 0%,transparent 68%)!important}
+.aurora .a1{--cor:#5564F8;left:var(--x1,-10%);top:var(--y1,10%)}
+.aurora .a2{--cor:#FC3E8C;right:var(--x2,-12%);top:var(--y2,40%);animation-delay:-8s}
+.aurora .a3{--cor:#A951C2;left:var(--x3,35%);bottom:var(--y3,-20%);--t:32vmax;animation-delay:-14s}
+@keyframes flutuaAur{to{transform:translate(8%,-10%) scale(1.12)}}
+
+/* etiqueta com ícone e contorno no gradiente */
+.tag{width:fit-content;justify-self:center;display:inline-flex;align-items:center;gap:.5rem;padding:.42em .95em;border-radius:var(--pilula);border:1.5px solid transparent;background:linear-gradient(var(--superficie-2),var(--superficie-2)) padding-box,var(--gradiente) border-box;color:var(--texto);font-size:.8125rem;font-weight:500;line-height:1.3;white-space:nowrap}
+.tag svg{width:15px;height:15px;stroke:var(--rosa);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ponto{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--aovivo);animation:aoVivo 1.6s infinite}
+@keyframes aoVivo{0%{box-shadow:0 0 0 0 rgba(229,37,43,.6)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ==================== BOTÃO ==================== */
+.cta{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.75rem;min-height:3.5rem;padding:1rem 1.25rem 1rem 2rem;border:0;border-radius:var(--pilula);background:var(--azul);color:#fff;font:700 .95rem/1.2 var(--fonte-texto);letter-spacing:.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;overflow:hidden;isolation:isolate;box-shadow:0 10px 24px rgba(0,0,0,.3),0 0 0 5px rgba(74,102,255,.28);animation:botaoPulso 2.2s infinite;transition:transform .2s var(--ease),box-shadow .3s}
+.cta::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(255,255,255,.22),transparent 55%);z-index:-1}
+.cta::after{content:"";position:absolute;top:0;left:-6.25rem;width:4rem;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:botaoBrilho 3s var(--ease) infinite;z-index:-1}
+.cta .seta{display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:#fff;color:var(--azul);transition:transform .3s var(--ease)}
+.cta .seta svg{width:16px;height:16px}
+.cta:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 0 6px rgba(74,102,255,.5)}
+.cta:hover .seta{transform:translateX(3px)}
+.cta:active{transform:scale(.97)}
+@keyframes botaoPulso{0%{box-shadow:0 10px 24px rgba(0,0,0,.3),0 0 0 5px rgba(74,102,255,.28),0 0 0 5px rgba(74,102,255,.45)}70%,100%{box-shadow:0 10px 24px rgba(0,0,0,.3),0 0 0 5px rgba(74,102,255,.28),0 0 0 22px transparent}}
+@keyframes botaoBrilho{0%{left:-6.25rem}60%,100%{left:110%}}
+.cta-confianca{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.1rem;font-size:.8125rem;color:var(--texto-3)}
+.cta-confianca span{display:inline-flex;align-items:center;gap:.4rem}
+.cta-confianca svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+@media (max-width:480px){.cta{width:100%;font-size:.9rem;padding-left:1.25rem}}
+
+/* ==================== TOPO DE VIDRO ==================== */
+.topo{position:fixed;top:14px;left:50%;z-index:70;transform:translateX(-50%);width:min(64rem,calc(100% - 24px));display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .55rem .55rem 1.25rem;border-radius:var(--pilula);background:rgba(14,14,17,.78);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 30px rgba(0,0,0,.35);transition:transform .5s var(--ease-saida),background .3s}
+.topo.escondido{transform:translate(-50%,-140%)}
+.topo img{height:22px;width:auto}
+.topo nav{display:flex;gap:.25rem}
+.topo nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;border-radius:var(--pilula);font-size:.875rem;color:rgba(255,255,255,.75);text-decoration:none;transition:background .2s,color .2s}
+.topo nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.topo .mini{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 1.1rem;border-radius:var(--pilula);background:var(--azul);color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+@media (max-width:860px){.topo nav{display:none}}
+
+/* ==================== FUNDO EM GRADE (porta da Talk Machine) ==================== */
+.secao--grade{container-type:inline-size;--grade-colunas:5;--cel:round(down,min(var(--grade-celula),(100cqw - var(--gutter)*2)/var(--grade-colunas)),2px);--grade-x:round(down,50cqw - var(--cel)*var(--grade-colunas)/2,1px)}
+@media (min-width:768px){.secao--grade{--grade-colunas:7}}
+@media (min-width:1024px){.secao--grade{--grade-colunas:9}}
+.fundo-grade{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent);mask-image:linear-gradient(to bottom,#000 72%,transparent)}
+.fundo-grade__malha{--malha:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle r='1.5'/%3E%3Ccircle cx='100%25' r='1.5'/%3E%3Ccircle cy='100%25' r='1.5'/%3E%3Ccircle cx='100%25' cy='100%25' r='1.5'/%3E%3Csvg x='50%25' y='50%25' overflow='visible'%3E%3Cpath fill='none' stroke='black' d='M.5-7.5V-999M.5 8.5V999M-7.5.5H-999M8.5.5H999M.5 8.5A8 8 0 0 1 8.5.5M.5 8.5A8 8 0 0 0-7.5.5M.5-7.5A8 8 0 0 0 8.5.5M.5-7.5A8 8 0 0 1-7.5.5'/%3E%3C/svg%3E%3C/svg%3E");position:absolute;inset:0;background:var(--linha-grade);-webkit-mask:var(--malha) calc(var(--grade-x) - var(--cel)/2) calc(var(--cel)/-2)/var(--cel) var(--cel) repeat;mask:var(--malha) calc(var(--grade-x) - var(--cel)/2) calc(var(--cel)/-2)/var(--cel) var(--cel) repeat}
+.fundo-grade__clareira{position:absolute;top:var(--cel);bottom:0;left:var(--grade-x);width:calc(var(--cel)*var(--grade-colunas));border:1px solid var(--linha-grade);border-bottom:0;background:var(--fundo)}
+.fundo-grade__clareira--topo{top:0;bottom:auto;left:calc(50cqw - var(--cel)*1.5);width:calc(var(--cel)*3);height:var(--cel);border-top:0}
+.fundo-grade__estrela{position:absolute;top:-1px;left:-1px;display:grid;place-items:center;width:clamp(1.75rem,1rem + 2vw,2.5rem);aspect-ratio:1;translate:-50% -50%;border:1px solid var(--linha-grade);border-radius:50%;background:var(--fundo)}
+.fundo-grade__estrela+.fundo-grade__estrela{left:calc(100% + 1px)}
+.fundo-grade__estrela::before{content:"";width:.875rem;aspect-ratio:1;background:var(--gradiente);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c0 6.6 5.4 12 12 12-6.6 0-12 5.4-12 12 0-6.6-5.4-12-12-12 6.6 0 12-5.4 12-12z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c0 6.6 5.4 12 12 12-6.6 0-12 5.4-12 12 0-6.6-5.4-12-12-12 6.6 0 12-5.4 12-12z'/%3E%3C/svg%3E") center/contain no-repeat;animation:giraEstrela 12s linear infinite}
+@keyframes giraEstrela{to{transform:rotate(360deg)}}
+.fundo-grade__celula,.fundo-grade__pixels{--coluna:var(--x);position:absolute;top:calc(var(--y)*var(--cel));left:calc(var(--grade-x) + var(--coluna)*var(--cel));width:var(--cel);aspect-ratio:1}
+.fundo-grade__celula--direita,.fundo-grade__pixels--direita{--coluna:calc(var(--grade-colunas) + var(--x))}
+.fundo-grade__celula{display:none;border:1px solid transparent;border-radius:var(--grade-canto);background:var(--superficie-2) padding-box;animation:celulaPiscar 6s var(--ease) infinite alternate;animation-delay:calc(var(--y)*-1.7s)}
+@media (min-width:1024px){.fundo-grade__celula{display:block}}
+@keyframes celulaPiscar{from{opacity:.35}}
+.fundo-grade__pixels::before{content:"";position:absolute;inset:32%;background:var(--texto-3);opacity:.35;-webkit-mask:var(--pixels) center/contain no-repeat;mask:var(--pixels) center/contain no-repeat;--pixels:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M0 0h6v6H0zM9 0h6v6H9zM18 0h6v6h-6zM0 9h6v6H0zM18 9h6v6h-6zM0 18h6v6H0zM9 18h6v6H9zM18 18h6v6h-6z'/%3E%3C/svg%3E")}
+.fundo-grade__pixels--seta::before{--pixels:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 0h6v6H9zM0 9h6v6H0zM9 9h6v6H9zM18 9h6v6h-6zM9 18h6v6H9z'/%3E%3C/svg%3E")}
+.fundo-grade__pontos{position:absolute;inset:0;width:100%;height:100%}
+.fundo-grade__conteudo{position:relative;z-index:1}
+/* o conteúdo nunca passa da clareira (senão a grade atravessa cards e títulos) */
+.secao--grade .container.fundo-grade__conteudo{max-width:calc(var(--cel)*var(--grade-colunas));padding-inline:clamp(1rem,2.5vw,2.25rem)}
+.secao--grade .estreito.fundo-grade__conteudo{max-width:min(var(--estreito),calc(var(--cel)*var(--grade-colunas)))}
+@media (max-width:767px){.secao--grade .container.fundo-grade__conteudo{padding-inline:.75rem}}
+
+/* ==================== HERO ==================== */
+.hero{padding-top:0;padding-bottom:var(--esp-9,6rem)}
+.hero .faixa{height:var(--cel)}
+.hero .miolo{padding-top:clamp(2rem,3vw,2.75rem);text-align:center}
+.hero h1{font-family:var(--fonte-titulo);font-size:var(--fs-h1);font-weight:700;line-height:1;letter-spacing:var(--ls-h1);color:#fff;margin-top:1.5rem;text-wrap:balance}
+.hero .apoio{font-family:var(--fonte-titulo);font-size:var(--fs-apoio);font-weight:400;line-height:1.15;letter-spacing:-.03em;color:#fff;max-width:22ch;margin:1rem auto 0;text-wrap:balance;transition:opacity .8s}
+.hero .apoio b{font-weight:700;color:#fff}
+.hero[data-era="1"] .apoio{opacity:.3}
+.hero .peq{max-width:40ch;margin:1.1rem auto 0}
+.chave{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;width:min(360px,86vw);height:60px;margin:1.75rem auto 0;padding:0;border-radius:var(--pilula);color:#fff;font:500 .92rem var(--fonte-texto);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.chave:focus-visible{outline:2px solid var(--rosa);outline-offset:4px}
+.chave .rot{position:relative;z-index:2;line-height:1.15;transition:opacity .5s}
+.chave .rot small{display:block;font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;color:var(--texto-3)}
+.chave .bola{position:absolute;z-index:1;top:5px;left:5px;width:calc(50% - 5px);height:48px;border-radius:var(--pilula);background:var(--superficie-3);transition:transform .9s var(--ease-saida),background .9s,box-shadow .9s}
+.chave[aria-checked="true"] .bola{transform:translateX(100%);background:var(--gradiente);box-shadow:0 8px 24px rgba(252,62,140,.4)}
+.chave[aria-checked="true"] .r2 small{color:rgba(255,255,255,.85)}
+.chave[aria-checked="false"] .r2,.chave[aria-checked="true"] .r1{opacity:.45}
+.hero .acao{margin-top:1.75rem}
+
+/* ==================== A PLATAFORMA RECRIADA EM CÓDIGO ==================== */
+.app{position:relative;width:100%;margin:3.5rem auto 0;text-align:left}
+.app::before{content:"";position:absolute;inset:-6% -10% -16%;background:radial-gradient(50% 50% at 30% 60%,rgba(85,100,248,.55),transparent 70%),radial-gradient(50% 50% at 72% 55%,rgba(252,62,140,.45),transparent 70%);z-index:-1}
+.app .janela{position:relative;border-radius:22px;padding:7px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 40px 90px rgba(0,0,0,.6)}
+.app .tela{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);aspect-ratio:16/9.6;border-radius:16px;overflow:hidden;background:#000}
+.app .lateral{display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 0;background:#0E0E10;border-right:1px solid rgba(255,255,255,.06);z-index:2}
+.app .lateral svg{width:18px;height:18px;stroke:#8a8a92;fill:none;stroke-width:1.8}
+.app .lateral .ativo{padding:7px;border-radius:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+.app .lateral .ativo svg{stroke:#fff}
+.app .lateral .logo-l{width:20px;height:20px;fill:#fff;stroke:none;margin-bottom:6px}
+.app .palco-app{position:relative;display:flex;flex-direction:column;align-items:center;padding:0 6%;background:url(img/portal-estrela-1440.webp) center 62%/cover;transition:filter 1.1s}
+.app .palco-app::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.05) 40%,rgba(0,0,0,.55));pointer-events:none}
+.app .saudacao{position:relative;z-index:1;margin-top:auto;font-family:var(--fonte-texto);font-weight:500;font-size:clamp(1.05rem,.6rem + 1.9vw,2.15rem);line-height:1.15;letter-spacing:-.02em;color:#fff;text-align:center;text-shadow:0 4px 30px rgba(0,0,0,.6);display:flex;align-items:center;gap:.5em}
+.app .saudacao svg{width:.85em;fill:var(--rosa);filter:drop-shadow(0 0 10px rgba(255,61,139,.7))}
+.app .missao{position:relative;z-index:1;width:min(92%,560px);margin-top:4%;display:flex;align-items:center;gap:10px;padding:10px 10px 10px 14px;border-radius:14px;background:rgba(18,18,22,.72);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.app .missao .mais{color:#9a9aa2;font-size:1.1rem;line-height:1}
+.app .missao .texto-m{flex:1;min-width:0;font-size:clamp(.66rem,.5rem + .5vw,.88rem);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app .missao .texto-m::after{content:"";display:inline-block;width:1.5px;height:1em;margin-left:2px;vertical-align:-2px;background:var(--rosa);animation:cursorPisca .9s steps(1) infinite}
+@keyframes cursorPisca{50%{opacity:0}}
+.app .chip-m{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border-radius:8px;background:rgba(255,255,255,.06);font-size:clamp(.55rem,.45rem + .3vw,.72rem);color:#d6d6dc;white-space:nowrap}
+.app .chip-m i{width:6px;height:6px;border-radius:50%;background:var(--c)}
+.app .chip-m.some{display:none}
+@media (min-width:640px){.app .chip-m.some{display:inline-flex}}
+.app .dock{position:relative;z-index:1;display:flex;gap:10px;margin-top:auto;padding:0 0 4.5%}
+.app .grupo{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(6px,1.4vw,16px);padding:8px clamp(8px,1.4vw,14px) 6px;border-radius:14px;background:rgba(18,18,22,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);position:relative}
+.app .grupo>small{position:absolute;bottom:-1.5em;left:0;right:0;text-align:center;font-size:.65rem;color:#9a9aa2}
+.app .item{display:grid;justify-items:center;gap:4px;font-size:clamp(.5rem,.4rem + .3vw,.68rem);color:#cfcfd6;border:0;background:none;padding:0;cursor:pointer;font-family:inherit}
+.app .item b{display:grid;place-items:center;width:clamp(24px,3vw,34px);aspect-ratio:1;border-radius:9px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);transition:all .4s var(--ease)}
+.app .item svg{width:52%;stroke:var(--c);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.app .item.aceso b{background:color-mix(in srgb,var(--c) 22%,transparent);border-color:var(--c);box-shadow:0 0 18px color-mix(in srgb,var(--c) 60%,transparent);transform:translateY(-3px)}
+.app .trava{position:absolute;inset:0;display:grid;place-items:center;z-index:5;transition:opacity .8s;pointer-events:none}
+.app .trava span{display:inline-flex;align-items:center;gap:.6rem;padding:.7rem 1.1rem;border-radius:var(--pilula);background:rgba(13,13,13,.75);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--linha);color:#fff;font-weight:600;font-size:.92rem}
+.hero[data-era="1"] .app .palco-app,.hero[data-era="1"] .app .lateral{filter:grayscale(1) brightness(.4) blur(3px)}
+.hero[data-era="2"] .app .trava{opacity:0}
+/* selo flutuante sobre a janela */
+.flutua{position:absolute;z-index:6;display:flex;align-items:center;gap:.6rem;padding:.6rem .9rem;border-radius:14px;font-size:.8rem;color:#fff;animation:boia 6s ease-in-out infinite}
+.flutua b{display:block;font-size:.85rem}
+.flutua small{color:var(--texto-3)}
+.flutua .ic-f{display:grid;place-items:center;width:32px;height:32px;border-radius:10px;background:var(--c)}
+.flutua .ic-f svg{width:18px;stroke:#fff;fill:none;stroke-width:2}
+.flutua.f1{left:-4%;top:22%}.flutua.f2{right:-5%;bottom:20%;animation-delay:-3s}
+@keyframes boia{50%{transform:translateY(-10px)}}
+@media (max-width:900px){.flutua{display:none}}
+@media (max-width:640px){.app .palco-app{background-image:url(img/portal-estrela-960.webp)}.app .tela{grid-template-columns:minmax(0,1fr);aspect-ratio:4/5}.app .lateral{display:none}.app .palco-app{background-position:62% 60%;padding:0 4%}.app .missao{width:100%;margin-top:6%}.app .dock{flex-direction:column;align-items:center;gap:1.9em;padding-bottom:9%}.app .grupo{gap:10px}.app .item{font-size:.62rem}.app .item b{width:34px}.app .saudacao{font-size:1.3rem}}
+.hero[data-era="1"] .flutua{opacity:0}
+
+/* ==================== FRASE PRESA NA ROLAGEM ==================== */
+.virada{position:relative;min-height:240svh}
+.virada .fixa{position:sticky;top:0;height:100svh;display:grid;align-content:center;justify-items:center;gap:1.5rem;text-align:center;padding-inline:var(--gutter)}
+.virada .frase{font-family:var(--fonte-titulo);font-size:var(--fs-mega);font-weight:400;line-height:1;letter-spacing:-.045em;color:#fff;max-width:13ch;text-wrap:balance}
+.virada .frase b{font-weight:700}
+.virada .palavra{display:inline-block;opacity:var(--op,.08);filter:blur(var(--bl,12px));transform:translateY(var(--ty,40%))}
+.virada .apoio-v{max-width:34ch;font-size:var(--fs-lead);opacity:var(--op-apoio,0);transform:translateY(calc((1 - var(--op-apoio,0)) * 24px));filter:blur(calc((1 - var(--op-apoio,0)) * 8px))}
+.virada .estrela-fundo{position:absolute;left:50%;top:50%;width:min(70vh,640px);translate:-50% -50%;opacity:.45;z-index:-1}
+.embaralha[data-txt]{position:relative}
+@media (prefers-reduced-motion:reduce){.virada{min-height:0}.virada .fixa{position:static;height:auto;padding-block:var(--secao-y)}.virada .palavra{--op:1;--bl:0;--ty:0}.virada .apoio-v{--op-apoio:1}}
+
+/* ==================== ÍCONES VIVOS ==================== */
+.ic-vivo{display:grid;place-items:center;width:52px;height:52px;border-radius:15px;background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);box-shadow:0 10px 30px -10px color-mix(in srgb,var(--c) 70%,transparent),inset 0 1px 0 rgba(255,255,255,.25)}
+.ic-vivo svg{width:28px;height:28px;stroke:var(--c);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.ic-vivo .gira{transform-origin:12px 12px;animation:giraIc 6s linear infinite}
+.ic-vivo .gira-r{transform-origin:12px 12px;animation:giraIc 9s linear infinite reverse}
+@keyframes giraIc{to{transform:rotate(360deg)}}
+.ic-vivo .pulsa{transform-origin:12px 12px;animation:pulsaIc 2.2s ease-in-out infinite}
+@keyframes pulsaIc{50%{transform:scale(1.18);opacity:.6}}
+.ic-vivo .sol{animation:solIc 3.2s ease-in-out infinite}
+@keyframes solIc{50%{transform:translate(-2px,-2px)}}
+.ic-vivo .monte{animation:monteIc 3.2s ease-in-out infinite}
+@keyframes monteIc{50%{transform:translateX(1.5px)}}
+.ic-vivo .janela-l{animation:janelaIc 2.4s steps(1) infinite;fill:var(--c);stroke:none;opacity:.2}
+.ic-vivo .janela-l:nth-of-type(2){animation-delay:.6s}.ic-vivo .janela-l:nth-of-type(3){animation-delay:1.2s}.ic-vivo .janela-l:nth-of-type(4){animation-delay:1.8s}
+@keyframes janelaIc{0%,49%{opacity:.2}50%,100%{opacity:1}}
+.ic-vivo .traco{stroke-dasharray:4 3;animation:tracoIc 1.2s linear infinite}
+@keyframes tracoIc{to{stroke-dashoffset:-14}}
+.ic-vivo .onda{transform-origin:center bottom;animation:ondaIc .9s ease-in-out infinite alternate}
+.ic-vivo .onda:nth-of-type(2){animation-delay:.2s}.ic-vivo .onda:nth-of-type(3){animation-delay:.4s}
+@keyframes ondaIc{to{transform:scaleY(.4)}}
+
+/* ==================== CARDS DE VIDRO (o que mudou) ==================== */
+.cards{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem;margin-top:3rem}
+.card{position:relative;display:flex;flex-direction:column;gap:.75rem;padding:1.5rem;border-radius:var(--raio-3);overflow:hidden;text-align:left}
+.card.c1{grid-column:span 7}.card.c2{grid-column:span 5}.card.c3{grid-column:span 5}.card.c4{grid-column:span 7}
+.card h3{font-size:1.2rem;font-weight:700;letter-spacing:-.02em;color:var(--texto)}
+.card p{font-size:.95rem;color:var(--texto-2);max-width:34ch}
+.card .topo-card{display:flex;justify-content:space-between;align-items:start}
+.card .palco{position:relative;margin-top:auto;border-radius:var(--raio-2);min-height:170px;display:grid;place-items:center;padding:1rem;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.25));border:1px solid rgba(255,255,255,.8)}
+@media (max-width:860px){.cards{grid-template-columns:1fr}.card{grid-column:auto!important}}
+.chips-ia{position:relative;display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;max-width:380px}
+.chips-ia span{display:inline-flex;align-items:center;gap:.35rem;padding:.32rem .65rem .32rem .35rem;border-radius:var(--pilula);background:#fff;border:1px solid #ececf0;font-size:.8rem;font-weight:600;color:#111;box-shadow:0 4px 10px rgba(0,0,0,.05);transition:transform .3s var(--ease)}
+.chips-ia span.vez{transform:translateY(-4px);box-shadow:0 10px 20px rgba(74,102,255,.25);border-color:#c9d0ff}
+.chips-ia img{width:20px;height:20px;border-radius:50%;object-fit:contain;background:#111;padding:2px}
+.mosaico{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;width:100%;max-width:320px}
+.mosaico i{aspect-ratio:1;border-radius:8px;background:var(--gradiente);opacity:.22;animation:piscaM 3s var(--ease) infinite;animation-delay:calc(var(--i)*-.37s)}
+.mosaico i.foto{opacity:1;background:url(img/portal-estrela-960.webp) var(--p,center)/cover;animation:none;box-shadow:0 6px 14px rgba(0,0,0,.15)}
+@keyframes piscaM{50%{opacity:.6}}
+.memoria{position:relative;width:100%;max-width:320px;display:grid;gap:.45rem}
+.memoria div{display:flex;align-items:center;gap:.6rem;padding:.55rem .75rem;border-radius:10px;background:#fff;border:1px solid #ececf0;font-size:.82rem;color:#111;box-shadow:0 4px 10px rgba(0,0,0,.04);opacity:.35;transform:translateX(-6px);transition:all .5s var(--ease)}
+.memoria div.salvo{opacity:1;transform:none}
+.memoria div b{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.memoria div em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:.75rem;color:#0E9F55}
+.renda{position:relative;width:100%;max-width:340px}
+.renda svg{width:100%}
+.renda .linha-g{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 2s var(--ease)}
+.on .renda .linha-g{stroke-dashoffset:0}
+.renda .valor-r{position:absolute;right:6px;top:4px;padding:.3rem .6rem;border-radius:8px;background:#fff;border:1px solid #ececf0;font-size:.75rem;font-weight:700;color:#0E9F55;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+
+/* ==================== TÓPICOS COM NÚMERO EM CONTORNO ==================== */
+.duas{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.duas .fixo-topo{position:sticky;top:7rem}
+@media (max-width:900px){.duas{grid-template-columns:1fr}.duas .fixo-topo{position:static}}
+.topicos{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.topico{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;padding:1.4rem 1.5rem;border-radius:var(--raio-3)}
+.topico h3{font-family:var(--fonte-titulo);font-size:var(--fs-h3);font-weight:400;line-height:1.08;letter-spacing:var(--ls-h2);color:var(--texto);margin-bottom:.4rem}
+.topico .antes{display:inline-flex;align-items:center;gap:.4rem;margin-bottom:.6rem;padding:.2rem .55rem;border-radius:6px;background:rgba(255,255,255,.05);font-family:var(--mono);font-size:.75rem;letter-spacing:.02em;color:var(--texto-3)}
+.topico .antes::before{content:"antes";color:var(--rosa)}
+.topico p{max-width:40ch;font-size:.95rem}
+.topico .num{width:clamp(3.6rem,2rem + 4vw,5.6rem);overflow:visible;user-select:none}
+.topico .num text{fill:url(#gradiente-marca);fill-opacity:0;stroke:url(#gradiente-marca);stroke-width:1.5px;vector-effect:non-scaling-stroke;font-family:var(--fonte-titulo);font-size:100px;letter-spacing:-.05em;transition:fill-opacity .6s var(--ease)}
+.topico:hover .num text,.topico.cheio .num text{fill-opacity:1}
+
+/* ==================== ESTRELA COM LUZ NO CONTORNO ==================== */
+.estrela-luz{position:relative;display:grid;place-items:center}
+.estrela-luz svg{width:100%;overflow:visible}
+.estrela-luz .base{fill:rgba(255,255,255,.03);stroke:rgba(255,255,255,.16);stroke-width:.45}
+.estrela-luz .rastro{fill:none;stroke:url(#gradiente-marca);stroke-width:.7;stroke-linecap:round;stroke-dasharray:18 82;animation:luzCorre 4.5s linear infinite;filter:url(#brilho)}
+.estrela-luz .rastro.r2{stroke:#fff;stroke-width:.35;stroke-dasharray:4 96;animation-duration:4.5s;opacity:.9}
+@keyframes luzCorre{to{stroke-dashoffset:-100}}
+
+/* ==================== AGENCY MACHINE ==================== */
+.am-palco{position:relative;width:min(380px,78vw);aspect-ratio:1;margin:2.5rem auto 1rem;display:grid;place-items:center}
+.am-palco .sonar{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(252,62,140,.35);animation:sonar 3.6s ease-out infinite}
+.am-palco .sonar:nth-child(2){animation-delay:1.2s}.am-palco .sonar:nth-child(3){animation-delay:2.4s}
+@keyframes sonar{from{transform:scale(.45);opacity:.9}to{transform:scale(1.15);opacity:0}}
+.am-palco .equipe{position:absolute;inset:4%;animation:giraIc 50s linear infinite}
+.am-palco .equipe i{position:absolute;width:9px;height:9px;margin:-4.5px;border-radius:50%;background:#2a2a2f;transition:background .4s,box-shadow .4s}
+.am-palco .equipe i.aceso{background:#FFD39A;box-shadow:0 0 14px #FFB347}
+.am-palco .bloco{position:relative;width:58%;aspect-ratio:1;border-radius:28%;display:grid;place-items:center;padding:13%;transition:box-shadow 1s}
+.am-palco .bloco::before{content:"";position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle,rgba(169,81,194,.45),transparent 62%);opacity:.5;transition:opacity 1s}
+.am-palco.aberto .bloco::before{opacity:1}
+.am-palco .estrela-luz .base{transition:fill 1.2s,fill-opacity 1.2s}
+.am-palco.aberto .estrela-luz .base{fill:url(#gradiente-marca);fill-opacity:.85;filter:drop-shadow(0 0 10px rgba(252,62,140,.6))}
+.am-palco .estrela-luz .rastro{stroke-width:1.1}
+.am-palco .estrela-luz .rastro.r2{stroke-width:.5}
+.am-palco .cadeado{position:absolute;bottom:-14px;left:50%;translate:-50% 0;display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:var(--pilula);font-size:.75rem;font-weight:600;color:#fff;white-space:nowrap}
+.am-palco .cadeado svg{width:13px;stroke:currentColor;fill:none;stroke-width:2.2}
+.am-palco .cadeado .arco{transition:transform .6s var(--ease);transform-origin:70% 50%}
+.am-palco.aberto .cadeado{color:#9AF2C3}
+.am-palco.aberto .cadeado .arco{transform:translateY(-3px) rotate(-26deg)}
+.contagem{display:inline-grid;gap:.2rem;margin-top:1.75rem}
+.contagem strong{font-family:var(--fonte-titulo);font-size:clamp(2.4rem,1.6rem + 2.6vw,3.6rem);font-weight:700;letter-spacing:-.05em;line-height:1}
+
+/* ==================== PROGRAMA ==================== */
+.programa{list-style:none;margin:3rem 0 0;padding:0;display:grid;gap:.7rem}
+.programa li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1rem 1.25rem;align-items:center;padding:1rem 1.25rem;border-radius:var(--raio-3);transition:transform .3s var(--ease)}
+.programa li:hover{transform:translateX(6px)}
+.programa .ic-vivo{width:44px;height:44px;border-radius:13px}
+.programa .ic-vivo svg{width:22px;height:22px}
+.programa h3{font-size:1.08rem;color:var(--texto);letter-spacing:-.02em}
+.programa p{font-size:.92rem}
+.programa .n{font-family:var(--mono);font-size:.78rem;color:var(--texto-3)}
+.programa li.chave-li{border:1.5px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--gradiente) border-box}
+@media (max-width:640px){.programa li{grid-template-columns:auto 1fr}.programa .n{display:none}}
+
+/* ==================== INGRESSO + FORMULÁRIO ==================== */
+.inscricao{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:center;margin-top:3rem}
+.recibo{--corte:14px;filter:var(--recibo-sombra);max-width:24rem;width:100%;margin-inline:auto;transform:rotate(-3deg);transition:transform .6s var(--ease)}
+.recibo:hover{transform:rotate(0)}
+.recibo__topo,.recibo__base{background:#fff;color:#111;padding:1.5rem}
+.recibo__topo{border-radius:18px 18px 0 0;-webkit-mask:radial-gradient(circle var(--corte) at 0 100%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--corte) at 100% 100%,#0000 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle var(--corte) at 0 100%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--corte) at 100% 100%,#0000 98%,#000) right/51% 100% no-repeat;position:relative;overflow:hidden}
+.recibo__topo::before{content:"";position:absolute;inset:0 0 auto;height:90px;background:url(img/portal-estrela-960.webp) center 40%/cover}
+.recibo__topo>*{position:relative}
+.recibo .capa{height:66px;display:flex;align-items:flex-start;justify-content:space-between}
+.recibo .capa img{height:18px;width:auto}
+.recibo .capa .mono{color:#fff;font-size:.75rem;background:rgba(0,0,0,.4);padding:.2rem .45rem;border-radius:6px}
+.recibo__base{border-radius:0 0 18px 18px;border-top:2px dashed #d9d9de;-webkit-mask:radial-gradient(circle var(--corte) at 0 0,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--corte) at 100% 0,#0000 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle var(--corte) at 0 0,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle var(--corte) at 100% 0,#0000 98%,#000) right/51% 100% no-repeat;text-align:center}
+.recibo .linha-r{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-bottom:1px solid #eee;font-size:.92rem}
+.recibo .linha-r:last-child{border-bottom:0}
+.recibo .linha-r span{color:#71717A}
+.recibo .linha-r b{color:#000;text-align:right}
+.recibo .titulo-r{font-family:var(--fonte-titulo);font-size:1.55rem;font-weight:700;letter-spacing:-.03em;margin:1.1rem 0 .6rem;color:#000}
+.recibo .barras{height:52px;margin:.4rem auto .5rem;max-width:230px;background:repeating-linear-gradient(90deg,#111 0 2px,transparent 2px 4px,#111 4px 5px,transparent 5px 8px,#111 8px 11px,transparent 11px 13px)}
+.recibo .nome-r{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;color:#444}
+.form{display:grid;gap:.85rem;padding:clamp(1.5rem,3vw,2.25rem);border-radius:var(--raio-4);text-align:left}
+.form label{display:grid;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--texto)}
+.form input{width:100%;min-height:3.3rem;padding:0 1rem;border-radius:.9rem;border:1px solid var(--linha);background:rgba(255,255,255,.04);color:var(--texto);font:400 1rem var(--fonte-texto);transition:border-color .2s,box-shadow .2s}
+.form input::placeholder{color:var(--texto-3)}
+.form input:focus{outline:0;border-color:var(--azul);box-shadow:0 0 0 4px rgba(74,102,255,.22)}
+.form input[aria-invalid="true"]{border-color:#FF5A5F}
+.form .erro{min-height:1em;font-size:.82rem;color:#FF5A5F;font-weight:600}
+.form .cta{width:100%;margin-top:.3rem}
+.form .legal{font-size:.8rem;color:var(--texto-3)}
+.ok{text-align:center;display:grid;gap:.6rem;padding:2rem .5rem}
+.ok b{font-family:var(--fonte-titulo);font-size:1.6rem;letter-spacing:-.03em;color:var(--texto)}
+@media (max-width:900px){.inscricao{grid-template-columns:1fr}.recibo{transform:none}}
+
+/* ==================== AUTOR ==================== */
+.autor{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:end;gap:2rem;border-radius:var(--raio-4);overflow:hidden;padding:clamp(2rem,5vw,4rem) clamp(1.5rem,5vw,4rem) 0}
+.autor .texto{padding-bottom:clamp(2rem,5vw,4rem);align-self:center}
+.autor .tag{justify-self:start}
+@media (max-width:767px){.autor .tag{justify-self:center}.autor .texto{text-align:center}.autor .texto .lead{margin-inline:auto}}
+.autor .foto{position:relative;align-self:end}
+.autor .foto::before{content:"";position:absolute;inset:0 -20% -10%;background:radial-gradient(50% 50% at 50% 60%,rgba(169,81,194,.5),transparent 70%)}
+.autor .foto img{position:relative;width:min(360px,100%);margin-left:auto;border-radius:24px 24px 0 0;-webkit-mask:linear-gradient(to bottom,#000 78%,transparent);mask:linear-gradient(to bottom,#000 78%,transparent)}
+@media (max-width:767px){.autor{grid-template-columns:1fr}.autor .foto img{margin:0 auto}}
+
+/* ==================== FAQ ==================== */
+.faq{max-width:44rem;margin:3rem auto 0;display:grid;gap:.6rem}
+.faq details{border-radius:var(--raio-2);padding:0 1.25rem}
+.faq summary{list-style:none;cursor:pointer;min-height:3.6rem;padding:1.1rem 2.5rem 1.1rem 0;position:relative;font-size:1.02rem;font-weight:600;color:var(--texto)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:0;top:50%;width:.85rem;height:.85rem;transform:translateY(-50%);background:linear-gradient(var(--texto),var(--texto)) center/100% 2px no-repeat,linear-gradient(var(--texto),var(--texto)) center/2px 100% no-repeat;transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq details p{padding:0 0 1.2rem;max-width:56ch;font-size:.95rem}
+
+/* ==================== FECHAMENTO, RODAPÉ, ILHA, JANELA ==================== */
+.fechamento .estrela-luz{position:absolute;left:50%;top:52%;width:min(560px,90vw);translate:-50% -50%;opacity:.55;z-index:0;pointer-events:none}
+.rodape{background:#0B0B0D;padding:2.5rem var(--gutter) 6rem;font-size:.8rem;color:var(--texto-3);text-align:center;border-top:1px solid var(--linha)}
+.rodape img{height:22px;width:auto;margin:0 auto 1rem}
+.rodape a{text-decoration:none;margin:0 .3rem}
+.ilha{position:fixed;left:50%;bottom:16px;z-index:60;display:flex;align-items:center;gap:.9rem;padding:.5rem .5rem .5rem .6rem;border-radius:var(--pilula);background:rgba(10,10,12,.7);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.1);box-shadow:0 12px 32px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.1);color:#fff;transform:translate(-50%,160%);transition:transform .5s var(--ease-saida);max-width:calc(100vw - 24px)}
+.ilha.visivel{transform:translate(-50%,0)}
+.ilha img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:top}
+.ilha p{font-size:.88rem;font-weight:600;line-height:1.25;white-space:nowrap}
+.ilha p small{display:block;color:var(--texto-3);font-size:.75rem;font-weight:400}
+.ilha a{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;padding:0 1.1rem;border-radius:var(--pilula);background:var(--azul);color:#fff;font-weight:700;font-size:.85rem;text-decoration:none;white-space:nowrap}
+@media (max-width:420px){.ilha p small{display:none}.ilha p{font-size:.82rem}}
+@media (min-width:861px){.ilha{display:none}}
+dialog{border:0;padding:0;background:transparent;max-width:min(460px,calc(100vw - 24px));width:100%}
+dialog::backdrop{background:rgba(0,0,0,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+dialog .form{position:relative;animation:surge .3s var(--ease);background:rgba(20,20,24,.82)}
+dialog .fechar{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;background:transparent;color:var(--texto);font-size:1.6rem;cursor:pointer}
+@keyframes surge{from{opacity:0;transform:scale(.96) translateY(12px)}}
+
+/* animações em laço só rodam na seção que está na tela */
+.fora *,.fora *::before,.fora *::after{animation-play-state:paused!important}
+/* seções de baixo só são desenhadas quando chegam perto */
+.adiado{content-visibility:auto;contain-intrinsic-size:auto 900px}
+/* ==================== ENTRADA ==================== */
+.js .sobe{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.js .sobe.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .sobe{opacity:1;transform:none;filter:none}}
+
+/* ==================== T08 · página de inscrição do evento de 24/11 ==================== */
+.hero h1{font-size:clamp(2.1rem,1.1rem + 3.4vw,4rem);max-width:22ch;margin-inline:auto}
+.hero .sub{max-width:44ch;margin:1.25rem auto 0;font-size:var(--fs-lead);line-height:1.5;color:var(--texto-2);text-wrap:pretty}
+.video1{position:relative;width:min(100%,880px);margin:2.25rem auto 0}
+.video1::before{content:"";position:absolute;inset:-8% -10% -14%;background:radial-gradient(50% 50% at 30% 60%,rgba(85,100,248,.5),transparent 70%),radial-gradient(50% 50% at 72% 55%,rgba(252,62,140,.4),transparent 70%);z-index:-1}
+.video1 .janela{border-radius:22px;padding:7px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 40px 90px rgba(0,0,0,.6)}
+.video1 .quadro{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000}
+.video1 .quadro img,.video1 .quadro video,.video1 .quadro iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+.hero .acao{margin-top:2rem}
+.apoio-cta{max-width:44ch;margin:1rem auto 0;font-size:.875rem;line-height:1.5;color:var(--texto-3)}
+.pendente{display:inline-block;margin-top:.2rem;padding:.1rem .45rem;border-radius:6px;border:1px dashed #FF9A3D;color:#FF9A3D;font-family:var(--mono);font-size:.75rem;white-space:normal}
+.meio-bloco{display:grid;gap:1.25rem;padding-bottom:var(--secao-y)}
+.meio-bloco .lead{margin-inline:auto;max-width:48ch}
+.falta{color:#fff;font-weight:600;box-shadow:inset 0 -.35em 0 rgba(252,62,140,.35)}
+#mudou .app{max-width:960px;margin:3rem auto 0}
+.depois-app{margin-top:4rem;display:grid;gap:1.25rem}
+.depois-app .lead{margin-inline:auto;max-width:42ch}
+.destaque{font-family:var(--fonte-titulo);font-size:var(--fs-h3);line-height:1.15;letter-spacing:var(--ls-h2);color:#fff;text-wrap:balance}
+#dia24 .cab .titulo{max-width:24ch;margin-inline:auto}
+.card p{max-width:46ch}
+.conversa{display:grid;gap:.5rem;width:100%;max-width:300px}
+.conversa .bal{display:grid;gap:.35rem;width:70%;padding:.7rem .8rem;border-radius:14px;background:#fff;border:1px solid #ececf0;box-shadow:0 4px 10px rgba(0,0,0,.05)}
+.conversa .bal i{display:block;height:7px;border-radius:4px;background:#e4e4ea}
+.conversa .bal i.curta{width:60%}
+.conversa .ia{justify-self:end;background:var(--azul);border-color:var(--azul)}
+.conversa .ia i{background:rgba(255,255,255,.45)}
+.conversa .digita{width:auto;display:flex;gap:4px;padding:.6rem .8rem}
+.conversa .digita b{width:6px;height:6px;border-radius:50%;background:#9a9aa2;animation:digita 1.2s infinite}
+.conversa .digita b:nth-child(2){animation-delay:.2s}.conversa .digita b:nth-child(3){animation-delay:.4s}
+@keyframes digita{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.trilhas,.formas{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem;max-width:340px}
+.trilhas span,.formas span{padding:.45rem .8rem;border-radius:var(--pilula);background:#fff;border:1px solid #ececf0;font-size:.82rem;font-weight:600;color:#111;box-shadow:0 4px 10px rgba(0,0,0,.05);transition:all .35s var(--ease)}
+.trilhas span.vez,.formas span.vez{transform:translateY(-4px);border-color:#c9d0ff;box-shadow:0 10px 20px rgba(74,102,255,.25)}
+.formas span:last-child{background:var(--gradiente);color:#fff;border-color:transparent}
+#paraquem .topico h3{margin:0;font-size:clamp(1.2rem,1rem + .8vw,1.6rem)}
+.aceite{display:flex!important;align-items:flex-start;gap:.65rem!important;font-weight:400!important;font-size:.85rem!important;line-height:1.45;color:var(--texto-2)!important;cursor:pointer}
+.aceite input{flex:none;width:20px!important;min-height:0!important;height:20px;margin-top:.1rem;padding:0;accent-color:var(--azul)}
+.aceite input[aria-invalid="true"]{outline:2px solid #FF5A5F;outline-offset:2px}
+.fecho-1{margin:1.5rem auto 0;max-width:34ch;font-size:clamp(1.15rem,1rem + .6vw,1.45rem)}
+.fecho-1 b{color:#fff}
+.fecho-2{margin-top:1rem;font-size:var(--fs-h2);text-wrap:balance}
+.mantra{margin-top:2.5rem;font-family:var(--fonte-titulo);font-size:clamp(1.4rem,1rem + 1.6vw,2.2rem);font-weight:700;letter-spacing:-.03em;background:var(--gradiente-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ilha-estrela{width:30px;height:34px;fill:url(#gradiente-marca);flex:none;margin-left:.3rem}
+@media (max-width:420px){.ilha p{display:none}.ilha a{font-size:.8rem;padding:0 1rem}}
+@media (max-width:480px){.topo .mini{font-size:.75rem;padding:0 .8rem;min-height:40px}}
+@media (max-width:900px){.inscricao .form{order:-1}}
+.cta[disabled]{opacity:.7;cursor:wait}
+
+/* ==================== T08 v2 ==================== */
+.cab.estreito{margin-inline:auto}
+/* estrelas grandes de fundo: contorno fino */
+.estrela-fundo .base,.fechamento .estrela-luz .base{stroke-width:.08;stroke:rgba(255,255,255,.14)}
+.estrela-fundo .rastro,.fechamento .estrela-luz .rastro{stroke-width:.16;filter:drop-shadow(0 0 5px rgba(252,62,140,.7))}
+.estrela-fundo .rastro.r2,.fechamento .estrela-luz .rastro.r2{stroke-width:.06;filter:none}
+/* trilho: o plano bate no meio */
+.trilho{display:flex;align-items:center;gap:.75rem;width:min(100%,640px);margin:1rem auto .5rem}
+.trilho .ponta{flex:none;display:inline-flex;align-items:center;gap:.45rem;padding:.5rem .85rem;border-radius:var(--pilula);background:rgba(255,255,255,.06);border:1px solid var(--linha);color:#fff;font-size:.85rem;font-weight:600}
+.trilho .ponta svg{width:16px;height:16px;stroke:#FF9A3D;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.trilho .ponta.fim svg{fill:url(#gradiente-marca);stroke:none;width:14px;height:16px}
+.trilho .via{position:relative;flex:1;display:flex;justify-content:space-around;align-items:center;height:44px}
+.trilho .via::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.25) 0 6px,transparent 6px 12px);animation:tracoVia 1s linear infinite}
+@keyframes tracoVia{to{background-position:12px 0}}
+.trilho .obst{position:relative;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#1a1a20;border:1px solid rgba(252,62,140,.45);animation:obst 2.4s var(--ease) infinite;animation-delay:var(--d)}
+.trilho .obst svg{width:18px;height:18px;stroke:var(--rosa);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes obst{0%,100%{transform:none}10%{transform:translateX(-3px) rotate(-4deg)}20%{transform:translateX(3px) rotate(3deg)}30%{transform:none}}
+.trilho .bola-t{position:absolute;left:0;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--azul);box-shadow:0 0 12px var(--azul);animation:bolaT 2.4s var(--ease) infinite}
+@keyframes bolaT{0%{left:0;opacity:0}15%{opacity:1}45%{left:calc(16% - 14px)}55%{left:calc(16% - 22px)}85%{opacity:1}100%{left:0;opacity:0}}
+@media (max-width:520px){.trilho{gap:.4rem}.trilho .ponta{padding:.4rem .6rem;font-size:.75rem}.trilho .obst{width:32px;height:32px}.trilho .via{justify-content:space-evenly}}
+/* verbos acendendo */
+.verbos span{transition:color .35s,background-color .35s;border-radius:6px;padding:0 .12em}
+.verbos span.vez{color:#fff;background:color-mix(in srgb,#A951C2 35%,transparent)}
+/* para quem é */
+.perfis{list-style:none;margin:3rem auto 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;max-width:860px}
+.perfil{display:grid;gap:1.1rem;align-content:start;padding:1.5rem;border-radius:var(--raio-3);transition:transform .4s var(--ease),border-color .4s}
+.perfil:hover{transform:translateY(-4px);border-color:rgba(169,81,194,.5)}
+.perfil-topo{display:flex;justify-content:space-between;align-items:center}
+.perfil .num{width:3.4rem;overflow:visible}
+.perfil .num text{fill:url(#gradiente-marca);fill-opacity:0;stroke:url(#gradiente-marca);stroke-width:1.5px;vector-effect:non-scaling-stroke;font-family:var(--fonte-titulo);font-size:100px;letter-spacing:-.05em;transition:fill-opacity .6s var(--ease)}
+.perfil:hover .num text,.perfil.cheio .num text{fill-opacity:1}
+.perfil p{font-size:1.02rem;line-height:1.5;color:var(--texto-2)}
+.perfil p strong{color:#fff;font-weight:700}
+.ic-vivo .desenha{stroke-dasharray:24;stroke-dashoffset:24;animation:desenhaIc 2.6s var(--ease) infinite}
+@keyframes desenhaIc{50%,100%{stroke-dashoffset:0}}
+@media (max-width:700px){.perfis{grid-template-columns:1fr}}
+/* como funciona em passos */
+.passos{position:relative;list-style:none;margin:2.5rem auto 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;max-width:900px;text-align:center}
+.passos::before,.passos::after{content:"";position:absolute;top:26px;left:16.6%;right:16.6%;height:2px;background:rgba(255,255,255,.12)}
+.passos::after{background:var(--gradiente-h);transform-origin:left;transform:scaleX(var(--prog,0));transition:transform 1.6s var(--ease)}
+.passos li{position:relative;z-index:1;display:grid;justify-items:center;gap:.6rem;opacity:.35;transition:opacity .6s var(--ease)}
+.passos li.aceso{opacity:1}
+.passos .ic-vivo{background:#121217}
+.passos b{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#fff;margin-top:.3rem}
+.passos p{font-size:.95rem;line-height:1.5;max-width:26ch}
+.pendente-linha{margin-top:1.25rem}
+@media (max-width:760px){.passos{grid-template-columns:1fr;text-align:left;gap:1.25rem;max-width:30rem}.passos::before,.passos::after{top:26px;bottom:26px;left:25px;right:auto;width:2px;height:auto}.passos::after{transform-origin:top;transform:scaleY(var(--prog,0))}.passos li{grid-template-columns:52px 1fr;justify-items:start;column-gap:1rem;row-gap:.2rem}.passos li .ic-vivo{grid-row:span 2}.passos b{margin-top:.6rem}}
+/* ingresso com nome e stories */
+.ingresso-col{display:grid;gap:1rem;justify-items:center}
+.nome-campo{display:block}
+.recibo .nome-r{display:block;width:100%;border:0;border-bottom:1px dashed #c9c9d1;background:transparent;text-align:center;font-family:var(--mono);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:#111;padding:.35rem 0}
+.recibo .nome-r::placeholder{color:#8a8a94}
+.recibo .nome-r:focus{outline:0;border-bottom-color:var(--azul)}
+.cta-2{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:none;font-size:.85rem}
+.cta-2 .seta{background:var(--gradiente);color:#fff}
+.erro-story{min-height:1em;font-size:.82rem;color:#FF5A5F;font-weight:600}
+.visualmente-oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#janelaStory{max-width:min(420px,calc(100vw - 24px))}
+.story-caixa{position:relative;display:grid;gap:1rem;padding:1.25rem;border-radius:var(--raio-3);background:rgba(20,20,24,.9)}
+.story-caixa img{width:100%;height:auto;max-height:62svh;object-fit:contain;border-radius:14px}
+.story-acoes{display:grid;gap:.6rem}
+.story-acoes .cta{width:100%}
+.story-caixa .legal{text-align:center;font-size:.8rem;color:var(--texto-3)}
+.ok .cta{margin:.6rem auto 0}
+/* tela da plataforma no celular: mais compacta */
+@media (max-width:640px){
+  #mudou .app{margin-top:2rem}
+  .app .tela{aspect-ratio:1/1.02}
+  .app .saudacao{font-size:1.05rem}
+  .app .missao{padding:7px 8px 7px 10px;margin-top:5%}
+  .app .missao .texto-m{font-size:.72rem}
+  .app .dock{flex-direction:row;align-items:flex-end;gap:6px;padding-bottom:9%}
+  .app .grupo{gap:6px;padding:6px 6px 5px;border-radius:11px}
+  .app .item{font-size:0;gap:0}
+  .app .item b{width:28px;border-radius:8px}
+  .app .grupo>small{font-size:.6rem}
+}
+
+/* ==================== T08 v3 ==================== */
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form{position:relative}
+.form .politica{margin-top:-.4rem;padding-left:2.1rem}
+.form .politica a{color:var(--texto-2)}
+
+/* ==================== confirmação ==================== */
+.confirma{min-height:100svh;display:grid;align-content:center;padding-block:7rem 4rem}
+.confirma .miolo{text-align:center;display:grid;justify-items:center;gap:1.1rem;max-width:40rem;margin-inline:auto}
+.confirma h1{font-family:var(--fonte-titulo);font-size:clamp(2.2rem,1.4rem + 3vw,3.75rem);font-weight:700;line-height:1;letter-spacing:var(--ls-h1);color:#fff}
+.confirma p{font-size:var(--fs-lead);line-height:1.5;max-width:42ch;text-wrap:pretty}
+.confirma .chave-info{padding:1.1rem 1.4rem;border-radius:var(--raio-3);color:#fff;font-weight:600;max-width:40ch}
+.confirma .chave-info b{background:var(--gradiente-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+.confirma .mantra-c{margin-top:1rem;font-family:var(--fonte-titulo);font-size:clamp(1.6rem,1.1rem + 2vw,2.6rem);font-weight:700;letter-spacing:-.03em}
+.ok-check{width:84px;height:84px;display:grid;place-items:center;border-radius:50%;background:#2F46E4;box-shadow:0 0 0 10px rgba(47,70,228,.18),0 20px 50px rgba(47,70,228,.5);animation:okSurge .7s var(--ease-saida) both}
+.ok-check svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.ok-check path{stroke-dasharray:30;stroke-dashoffset:30;animation:okTraco .6s .35s var(--ease) forwards}
+.ok-check::after{content:"";position:absolute;width:84px;height:84px;border-radius:50%;border:2px solid rgba(47,70,228,.6);animation:okSonar 2.4s 1s ease-out infinite}
+@keyframes okSurge{from{transform:scale(.5);opacity:0}}
+@keyframes okTraco{to{stroke-dashoffset:0}}
+@keyframes okSonar{from{transform:scale(1);opacity:1}to{transform:scale(1.9);opacity:0}}
+.topo.so-logo{justify-content:center}
+@media (max-width:640px){.confirma{padding-block:5.5rem 2.5rem}.confirma .miolo{gap:.85rem}.confirma p{font-size:1rem}}
+
+/* ==================== confirmação v2: linha do tempo ==================== */
+.conf-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;max-width:1040px;margin-inline:auto}
+.conf-topo{display:grid;justify-items:start;gap:1rem;text-align:left}
+.conf-topo h1{font-family:var(--fonte-titulo);font-size:clamp(2.3rem,1.4rem + 3vw,3.9rem);font-weight:700;line-height:1;letter-spacing:var(--ls-h1);color:#fff}
+.conf-sub{font-size:var(--fs-lead);line-height:1.5;max-width:30ch}
+.conf-mantra{position:relative;margin-top:1.25rem;padding:1.4rem 0}
+.conf-mantra .estrela-luz{position:absolute;left:-14px;top:50%;width:92px;translate:0 -50%;opacity:.8}
+.conf-mantra .estrela-luz .base{stroke-width:.35}
+.conf-mantra p{position:relative;padding-left:96px;font-family:var(--fonte-titulo);font-size:clamp(1.4rem,1rem + 1.4vw,2.1rem);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.mantra-celular{display:none;margin-top:.5rem;text-align:center;font-family:var(--fonte-titulo);font-size:1.5rem;font-weight:700;letter-spacing:-.03em}
+.linha-conf{position:relative;list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.linha-conf::before{content:"";position:absolute;left:26px;top:30px;bottom:30px;width:2px;background:linear-gradient(#A951C2,#FC3E8C 50%,#FF9A3D);transform-origin:top;animation:linhaDesce 1.4s .5s var(--ease) both}
+@keyframes linhaDesce{from{transform:scaleY(0)}}
+.etapa{position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:1rem;align-items:start;padding:1.1rem 1.2rem 1.1rem 0;animation:etapaEntra .7s var(--ease-saida) both}
+.etapa.e1{animation-delay:.55s}.etapa.e2{animation-delay:.85s}.etapa.e3{animation-delay:1.15s}
+@keyframes etapaEntra{from{opacity:0;transform:translateY(14px)}}
+.etapa .ic-vivo{background:#121217;position:relative;z-index:1}
+.etapa p{font-size:1rem;line-height:1.5;color:var(--texto-2)}
+.etapa .rotulo{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.35rem;font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-3)}
+.destaque-dia{padding:1.2rem;border-radius:var(--raio-3);border:1.5px solid transparent;background:linear-gradient(#141419,#141419) padding-box,var(--gradiente) border-box;box-shadow:0 20px 50px -20px rgba(252,62,140,.45);margin-left:-1.2rem;grid-template-columns:76px minmax(0,1fr)}
+.destaque-dia p strong{color:#fff;font-weight:600}
+.destaque-dia .rotulo{color:#fff}
+.data-dia{position:relative;z-index:1;display:grid;place-items:center;align-content:center;width:76px;height:76px;border-radius:18px;background:var(--gradiente);box-shadow:0 12px 28px rgba(169,81,194,.45)}
+.data-dia b{font-family:var(--fonte-titulo);font-size:2rem;font-weight:700;line-height:1;color:#fff}
+.data-dia small{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.9);text-transform:uppercase}
+.mail-mini{display:flex;align-items:center;gap:.6rem;margin-top:.75rem;padding:.55rem .75rem;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--linha);max-width:300px}
+.mail-mini .av{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#2F46E4;flex:none}
+.mail-mini .av svg{width:12px;height:14px;fill:#fff}
+.mail-mini b{font-size:.8rem;color:#fff}
+.mail-mini i{flex:1;height:7px;border-radius:4px;background:rgba(255,255,255,.12)}
+.mail-mini .marca{width:20px;height:20px;flex:none;stroke:#8a8a92;fill:transparent;stroke-width:1.8;stroke-linejoin:round;animation:marcaEstrela 3.2s 1.8s infinite}
+@keyframes marcaEstrela{0%,15%{fill:transparent;stroke:#8a8a92;transform:none}25%{transform:scale(1.3)}35%,85%{fill:#FFC23D;stroke:#FFC23D;transform:none}100%{fill:transparent;stroke:#8a8a92}}
+@media (max-width:860px){
+  .confirma{padding-block:5.5rem 2.5rem}
+  .conf-grade{grid-template-columns:1fr;gap:1.75rem}
+  .conf-topo{justify-items:center;text-align:center}
+  .conf-topo .ok-check{width:64px;height:64px}.conf-topo .ok-check::after{width:64px;height:64px}.ok-check svg{width:30px;height:30px}
+  .conf-sub{max-width:34ch}
+  .conf-mantra{display:none}
+  .linha-conf{gap:.5rem}
+  .etapa{padding-block:.7rem}
+  .etapa p{font-size:.95rem}
+  .mantra-celular{display:block}
+}
+@media (max-width:640px){
+  .confirma{padding-block:4.75rem 1.5rem;min-height:auto}
+  .conf-grade{gap:1.1rem}
+  .conf-topo{gap:.55rem}
+  .conf-topo .ok-check{width:52px;height:52px;box-shadow:0 0 0 7px rgba(47,70,228,.18),0 12px 30px rgba(47,70,228,.5)}.conf-topo .ok-check::after{width:52px;height:52px}.ok-check svg{width:26px;height:26px}
+  .conf-topo h1{font-size:2.1rem}
+  .conf-sub{font-size:.95rem}
+  .etapa{grid-template-columns:44px minmax(0,1fr);gap:.75rem;padding-block:.45rem}
+  .etapa .ic-vivo{width:44px;height:44px;border-radius:13px}.etapa .ic-vivo svg{width:22px;height:22px}
+  .linha-conf::before{left:22px}
+  .etapa p{font-size:.9rem;line-height:1.45}
+  .etapa .rotulo{margin-bottom:.15rem}
+  .destaque-dia{grid-template-columns:60px minmax(0,1fr);padding:.85rem;margin-left:-.85rem}
+  .data-dia{width:60px;height:60px;border-radius:15px}.data-dia b{font-size:1.6rem}
+  .mail-mini{display:none}
+  .mantra-celular{font-size:1.35rem;margin-top:.25rem}
+}
+@media (prefers-reduced-motion:reduce){.etapa,.linha-conf::before{animation:none}}
+
+/* ==================== idioma ==================== */
+.idioma{position:relative;margin-left:auto;flex:none}
+.idioma-btn{display:inline-flex;align-items:center;gap:.35rem;min-height:40px;padding:0 .7rem;border-radius:var(--pilula);border:1px solid rgba(255,255,255,.14);background:transparent;color:rgba(255,255,255,.75);font:500 .75rem var(--mono);letter-spacing:.06em;cursor:pointer;transition:color .2s,background-color .2s}
+.idioma-btn:hover,.idioma-btn[aria-expanded="true"]{color:#fff;background:rgba(255,255,255,.08)}
+.idioma-btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.idioma-btn .seta-i{width:12px;height:12px;transition:transform .2s}
+.idioma-btn[aria-expanded="true"] .seta-i{transform:rotate(180deg)}
+.idioma-lista{position:absolute;right:0;top:calc(100% + 10px);min-width:170px;margin:0;padding:6px;list-style:none;border-radius:16px;background:rgba(18,18,22,.96);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.5);z-index:80}
+.idioma-lista button{display:block;width:100%;min-height:42px;padding:0 .9rem;border:0;border-radius:10px;background:transparent;color:var(--texto-2);font:500 .9rem var(--fonte-texto);text-align:left;cursor:pointer}
+.idioma-lista button:hover{background:rgba(255,255,255,.07);color:#fff}
+.idioma-lista button[aria-current="true"]{color:#fff;background:rgba(169,81,194,.22)}
+@media (max-width:480px){.topo .mini{display:none}.topo{padding-right:.45rem}}
+.topo.so-logo .idioma{position:absolute;right:.55rem;top:50%;transform:translateY(-50%);margin:0}
+
+/* respiro dentro da clareira */
+.conf-grade{padding:clamp(2rem,4vw,3.5rem) clamp(1.75rem,4.5vw,4rem);gap:clamp(2.5rem,6vw,5.5rem)}
+.conf-topo{gap:1.25rem}
+.linha-conf{gap:1.6rem}
+.etapa{padding-block:1.25rem;column-gap:1.25rem}
+.etapa p{line-height:1.65}
+.etapa .rotulo{margin-bottom:.55rem}
+.destaque-dia{padding:1.5rem}
+.mail-mini{margin-top:1rem}
+@media (max-width:860px){.conf-grade{padding:1.25rem 1.25rem 1.5rem;gap:1.75rem}.linha-conf{gap:.9rem}.etapa{padding-block:.6rem}}
+@media (max-width:640px){.conf-grade{padding:.5rem .9rem 1rem;gap:1.25rem}.linha-conf{gap:.6rem}.etapa{padding-block:.5rem}.etapa p{line-height:1.5}.destaque-dia{padding:.95rem}}
+
+/* v6: usa a largura da tela e cabe numa dobra */
+@media (min-width:1024px){
+  .confirma{min-height:100svh;padding-block:5.5rem 1.5rem;--grade-colunas:13}
+  .confirma .container.fundo-grade__conteudo{max-width:min(1300px,calc(var(--cel)*13))}
+  .conf-grade{max-width:none;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);padding:1.5rem clamp(2rem,4vw,4rem);gap:clamp(3rem,6vw,6rem)}
+  .linha-conf{gap:1rem}
+  .etapa{padding-block:.85rem}
+  .destaque-dia{padding:1.15rem 1.4rem}
+  .etapa p{line-height:1.55;max-width:56ch}
+  .conf-topo h1{font-size:clamp(2.6rem,1.6rem + 2.6vw,4rem)}
+}
+@media (min-width:1024px) and (max-height:760px){.ok-check{width:64px;height:64px}.ok-check::after{width:64px;height:64px}.conf-mantra{margin-top:.5rem;padding:.8rem 0}.mail-mini{display:none}}
+.topo.so-logo{min-height:58px;padding-right:4.5rem;padding-left:4.5rem}
+.topo.so-logo .idioma{right:.7rem}
+.topo.so-logo .idioma-btn{min-height:36px}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gradiente-marca" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5564F8"/><stop offset=".5" stop-color="#A951C2"/><stop offset="1" stop-color="#FC3E8C"/></linearGradient>
+    <filter id="brilho" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation=".6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <symbol id="estrela" viewBox="-1 -1 32 37"><path pathLength="100" d="M26.7254 0.0547745C27.8997 -0.211789 28.8925 0.518502 28.7089 1.72514C27.1474 5.76867 24.5652 9.93636 23.5645 14.1505C22.1939 19.9231 26.9128 22.3493 29.9028 26.5154C30.4901 27.5589 29.4911 28.8774 28.3119 28.716C23.6214 27.2489 19.6821 23.5413 14.6603 26.1106C10.704 28.1347 7.16196 32.0555 3.60001 34.6879C2.18355 35.2985 1.04456 34.2899 1.4418 32.8437C1.84088 31.3911 3.12579 29.2928 3.76881 27.8025C4.97115 25.016 7.07897 20.6443 6.76936 17.6543C6.43663 14.4416 2.00691 11.0211 0.211244 8.4075C-0.447274 7.29032 0.528709 5.95818 1.82933 6.18801C4.85693 7.05778 8.71277 9.69661 11.8571 9.72095C16.2454 9.75498 22.3854 3.27202 25.7814 0.672176C26.0129 0.495068 26.4701 0.112684 26.7254 0.0547745Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="topo so-logo" id="topo"><img decoding="async" src="img/logotipo-branco-600.png" alt="ORAYON" width="600" height="149"><div class="idioma" id="idioma"><button class="idioma-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Idioma"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span class="idioma-atual">PT</span><svg class="seta-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><ul class="idioma-lista" hidden><li><button type="button" data-lang="pt" lang="pt-BR">Português</button></li><li><button type="button" data-lang="en" lang="en">English</button></li><li><button type="button" data-lang="it" lang="it">Italiano</button></li><li><button type="button" data-lang="es" lang="es">Español</button></li></ul></div></header>
+
+<main>
+<section class="secao secao--grade confirma" data-tema="escuro">
+  <div class="fundo-grade" aria-hidden="true"><div class="fundo-grade__malha"></div><div class="fundo-grade__clareira" style="top:0"><span class="fundo-grade__estrela"></span><span class="fundo-grade__estrela"></span></div><span class="fundo-grade__celula" style="--x:-2;--y:2"></span><span class="fundo-grade__celula fundo-grade__celula--direita" style="--x:1;--y:1"></span><span class="fundo-grade__pixels" style="--x:-1;--y:0"></span><span class="fundo-grade__pixels fundo-grade__pixels--direita" style="--x:0;--y:3"></span></div>
+  <div class="aurora" aria-hidden="true" style="--o:.35"><i class="a1" style="--x1:-5%;--y1:35%"></i><i class="a2" style="--x2:-8%;--y2:20%"></i></div>
+  <div class="container fundo-grade__conteudo">
+    <div class="conf-grade">
+      <div class="conf-topo">
+        <span class="ok-check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <h1>Inscrição <span class="grad">confirmada.</span></h1>
+        <p class="conf-sub">A sua inscrição no Lançamento do Ecossistema ORAYON foi feita.</p>
+        <div class="conf-mantra">
+          <div class="estrela-luz" aria-hidden="true"><svg viewBox="-1 -1 32 37"><use class="base" href="#estrela"/><use class="rastro" href="#estrela" style="animation-duration:6s"/><use class="rastro r2" href="#estrela" style="animation-duration:6s"/></svg></div>
+          <p class="grad">Agora só depende de você.</p>
+        </div>
+      </div>
+
+      <ol class="linha-conf">
+        <li class="etapa e1">
+          <span class="ic-vivo" style="--c:#A951C2"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path class="traco" d="M3 7l9 6 9-6"/></svg></span>
+          <div><span class="rotulo">Até o dia 24</span><p>A partir de agora, fique de olho no seu e-mail: é por lá que chegam os conteúdos exclusivos até o dia 24.</p></div>
+        </li>
+        <li class="etapa e2 destaque-dia">
+          <span class="data-dia" aria-hidden="true"><b>24</b><small>nov</small></span>
+          <div><span class="rotulo"><span class="ponto"></span>Terça, 24/11 · 20h</span><p><strong>No dia do evento, terça, 24/11, às 20h (horário de Brasília), o link da sala chega no seu e-mail e no seu WhatsApp.</strong></p></div>
+        </li>
+        <li class="etapa e3">
+          <span class="ic-vivo" style="--c:#FF9A3D"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8L3.5 9.2l5.9-.9z"/></svg></span>
+          <div><p>Para não perder nada, procure o nosso e-mail e marque como importante.</p>
+            <div class="mail-mini" aria-hidden="true"><span class="av"><svg viewBox="-1 -1 32 37"><use href="#estrela"/></svg></span><b>ORAYON</b><i></i><svg class="marca" viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4l-5.2 2.7 1-5.8L3.5 9.2l5.9-.9z"/></svg></div>
+          </div>
+        </li>
+      </ol>
+      <p class="mantra-celular grad">Agora só depende de você.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="rodape">
+  <img decoding="async" loading="lazy" src="img/logotipo-branco-600.png" alt="ORAYON" width="600" height="149">
+  <p>CNPJ 41.406.861/0001-51 · Master Franqueadora &nbsp;·&nbsp; CNPJ 65.383.196/0001-96 · Master Editora</p>
+  <p style="margin-top:.5rem">© 2026 ORAYON · <a href="#" data-legal="privacidade">Política de Privacidade</a> <span class="pendente" data-pendente>[A CONFIRMAR: endereço da política de privacidade · Reges, com o domínio]</span></p>
+</footer>
+
+<script>
+/* ===== CFG: o mesmo da página de inscrição ===== */
+const CFG = {
+  privacidade: "",  // endereço da Política de Privacidade
+  pixel: "",        // ID do Pixel da Meta. Vazio = não carrega
+  gtag: "",         // ID da tag do Google (G-... ou AW-...). Vazio = não carrega
+  gtagConversao: "", // rótulo da conversão do Google Ads (AW-XXXX/rotulo), se houver
+  mostrarPendencias: true
+};
+/* a inscrição conta aqui, ao abrir a página */
+if (CFG.pixel) { !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', CFG.pixel); fbq('track', 'PageView'); fbq('track', 'CompleteRegistration', { content_name: 'LANC 24/11' }); }
+if (CFG.gtag) { const g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + CFG.gtag; document.head.appendChild(g); window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); }; gtag('js', new Date()); gtag('config', CFG.gtag); gtag('event', 'sign_up', { method: 'LANC 24/11' }); if (CFG.gtagConversao) gtag('event', 'conversion', { send_to: CFG.gtagConversao }); }
+(() => {
+  if (!CFG.mostrarPendencias) document.querySelectorAll('[data-pendente]').forEach(e => e.remove());
+  document.querySelectorAll('[data-legal]').forEach(a => { const u = CFG[a.dataset.legal]; if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener'; } else a.addEventListener('click', e => e.preventDefault()); });
+})();
+</script>
+<script>
+/* ===== idioma: PT (aprovado) · EN, IT, ES (tradução a aprovar pelo Reges) ===== */
+const I18N = {"d": {"en": {"O que mudou": "What changed", "No dia 24": "On the 24th", "Para quem é": "Who it is for", "Como funciona": "How it works", "Quero receber o acesso ao dia 24": "I want my access to the 24th", "Terça, 24/11 · 20h": "Tuesday, Nov 24 · 8 p.m.", "Tudo o que ficava entre a sua ideia e o seu resultado": "Everything that stood between your idea and your result", "acaba de sair do caminho.": "just got out of the way.", "Na terça, 24/11, a ORAYON mostra ao vivo como a inteligência artificial te dá autonomia para tirar os seus planos da cabeça e fazer virar realidade.": "On Tuesday, Nov 24, ORAYON shows live how artificial intelligence gives you the autonomy to take your plans out of your head and make them real.", "Às 20h (horário de Brasília). Evento online, numa sala fechada para inscritos.": "At 8 p.m. (Brasília time). Online event, in a private room for registered attendees.", "Um negócio, um produto, um projeto, uma ideia que já devia estar no ar.": "A business, a product, a project, an idea that should already be out there.", "E quase sempre falta alguma coisa:": "And something is almost always missing:", "saber fazer": "knowing how", "ter tempo": "having time", "ter dinheiro pra contratar quem sabe": "having the money to hire someone who knows", "Seu plano": "Your plan", "A realidade": "Reality", "Tudo isso é": "All of that is", "o meio.": "the in-between.", "Tudo o que fica entre o seu plano e a realidade.": "Everything that stands between your plan and reality.", "A inteligência artificial": "Artificial intelligence", "mudou essa conta.": "changed the math.", "Super Cérebro": "Super Brain", "o que importa pra você": "what matters to you", "As melhores IAs do mundo": "The world's best AIs", "num só lugar": "in one place", "O que temos para hoje?": "What's on for today?", "Qual a nossa missão de agora?": "What's our mission right now?", "Imagem": "Image", "Vídeo": "Video", "Áudio": "Audio", "Criar": "Create", "Agentes": "Agents", "Aplicativos": "Apps", "Especialistas": "Specialists", "Trabalhar": "Work", "Escreva o roteiro do meu próximo vídeo": "Write the script for my next video", "Crie as artes do lançamento do meu produto": "Create the launch artwork for my product", "Edite este vídeo para o meu Instagram": "Edit this video for my Instagram", "Grave a narração do meu anúncio": "Record the voice-over for my ad", "Organize tudo o que eu já aprovei": "Organize everything I've already approved", "Responda quem chamou no meu Instagram": "Reply to whoever messaged my Instagram", "Monte a proposta para o meu próximo cliente": "Put together the proposal for my next client", "Chame o especialista em vendas": "Call the sales specialist", "Quem aprende a usar ganha uma autonomia que nunca existiu: tirar os planos da cabeça e fazer virar realidade, praticamente sem depender de ninguém.": "Those who learn to use it gain an autonomy that never existed: taking plans out of their heads and making them real, practically without depending on anyone.", "É esse poder que a": "That is the power", "te ajuda a conquistar.": "helps you gain.", "Hub de imagem e vídeo": "Image and video hub", "Hub de IAs de texto": "Text AI hub", "Trilhas para aprender usando": "Learn-by-doing tracks", "Franquia digital": "Digital franchise", "Ao vivo · 24/11": "Live · Nov 24", "O que você vai ver": "What you'll see", "no dia 24": "on the 24th", "O Ecossistema ORAYON completo, ao vivo, e o que cada parte coloca nas suas mãos:": "The complete ORAYON Ecosystem, live, and what each part puts in your hands:", "O lugar onde fica tudo o que importa pra você, para qualquer objetivo, no trabalho ou na vida pessoal, compartilhado entre você e todas as IAs que trabalham com você e para você.": "The place where everything that matters to you is kept, for any goal, at work or in your personal life, shared between you and all the AIs that work with you and for you.", "O seu trabalho": "Your work", "✓ guardado": "✓ saved", "A sua vida pessoal": "Your personal life", "Os seus objetivos": "Your goals", "O conteúdo do seu negócio pesquisado, escrito e criado no seu Claude.": "Your business's content researched, written and created in your Claude.", "Pesquisado": "Researched", "Escrito": "Written", "Criado": "Created", "Conversas com quem vai comprar, puxadas pela IA no seu Instagram.": "Conversations with people who are going to buy, started by AI on your Instagram.", "Hubs de texto, imagem e vídeo": "Text, image and video hubs", "As melhores IAs do mundo num só lugar.": "The world's best AIs in one place.", "As trilhas para aprender usando": "Learn-by-doing tracks", "Introdução à IA, Claude na prática, criação de conteúdo e imagens e vídeos com IA.": "Introduction to AI, Claude in practice, content creation, and AI images and videos.", "Introdução à IA": "Introduction to AI", "Claude na prática": "Claude in practice", "Criação de conteúdo": "Content creation", "Imagens e vídeos com IA": "AI images and videos", "As formas de fazer parte": "Ways to be part of it", "Usar, assinar ou ser franqueado digital.": "Use, subscribe or become a digital franchisee.", "Usar": "Use", "Assinar": "Subscribe", "Ser franqueado digital": "Become a digital franchisee", "Para quem": "Who it is", "é.": "for.", "Pra quem tem um plano na cabeça": "For those with a plan in mind", "e quer mais do que ver ele de pé: quer ver ele virar realidade.": "who want more than to see it standing: they want to see it become real.", "Pra quem quer conquistar autonomia": "For those who want to gain autonomy", "e usar todo o potencial da inteligência artificial.": "and use the full potential of artificial intelligence.", "Pra quem está começando agora": "For those just starting out", "com a inteligência artificial e quer começar do jeito certo.": "with artificial intelligence who want to start the right way.", "Pra quem já usa": "For those who already use it", ", mas sente que ainda não aproveita tudo o que a IA pode dar.": ", but feel they are not yet getting everything AI can offer.", "Como": "How it", "funciona.": "works.", "Você se inscreve agora.": "You sign up now.", "Recebe o link no dia do evento, por e-mail e WhatsApp.": "You get the link on the day of the event, by email and WhatsApp.", "Terça, 24/11, às 20h (horário de Brasília), ao vivo no Zoom, numa sala fechada para inscritos.": "Tuesday, Nov 24, at 8 p.m. (Brasília time), live on Zoom, in a private room for registered attendees.", "Ingresso": "Ticket", "Ecossistema ORAYON, ao vivo": "ORAYON Ecosystem, live", "Data": "Date", "Terça, 24/11": "Tuesday, Nov 24", "Horário": "Time", "20h (Brasília)": "8 p.m. (Brasília)", "Onde": "Where", "Ao vivo no Zoom": "Live on Zoom", "Acesso": "Access", "Link no dia do evento": "Link on the day of the event", "Seu nome no ingresso": "Your name on the ticket", "Baixar meu ingresso para os stories": "Download my ticket for Stories", "Nome": "Name", "E-mail": "Email", "WhatsApp com DDD": "WhatsApp (Brazilian number, with area code)", "Quero receber os avisos do evento e as novidades da ORAYON por e-mail e WhatsApp.": "I want to receive event notices and ORAYON news by email and WhatsApp.", "Política de Privacidade": "Privacy Policy", "Ao vivo · 24/11 · 20h": "Live · Nov 24 · 8 p.m.", "A vida inteira te falaram que só depende de você.": "All your life you were told it only depends on you.", "Era mentira.": "It was a lie.", "Mas agora é verdade, graças à inteligência artificial.": "But now it's true, thanks to artificial intelligence.", "E a ORAYON te mostra como.": "And ORAYON shows you how.", "Agora só depende de você.": "Now it only depends on you.", "Agora só depende": "Now it only depends", "de você.": "on you.", "Baixar imagem": "Download image", "Compartilhar": "Share", "No celular, se o download não abrir, toque e segure a imagem para salvar.": "On your phone, if the download doesn't open, tap and hold the image to save it.", "Seções": "Sections", "Tela inicial da plataforma ORAYON: O que temos para hoje?": "ORAYON platform home screen: What's on for today?", "Ingresso do evento": "Event ticket", "ESCREVA SEU NOME AQUI": "WRITE YOUR NAME HERE", "Seu nome": "Your name", "voce@email.com": "you@email.com", "Inscrição no evento de 24/11": "Registration for the Nov 24 event", "Fechar": "Close", "Seu ingresso para os stories": "Your ticket for Stories", "Assistir ao vídeo": "Watch the video", "Idioma": "Language", "Inscrição": "Registration", "confirmada.": "confirmed.", "A sua inscrição no Lançamento do Ecossistema ORAYON foi feita.": "Your registration for the ORAYON Ecosystem Launch is complete.", "Até o dia 24": "Until the 24th", "A partir de agora, fique de olho no seu e-mail: é por lá que chegam os conteúdos exclusivos até o dia 24.": "From now on, keep an eye on your email: that is where the exclusive content arrives until the 24th.", "nov · 20h": "nov · 8 p.m.", "No dia do evento, terça, 24/11, às 20h (horário de Brasília), o link da sala chega no seu e-mail e no seu WhatsApp.": "On the day of the event, Tuesday, Nov 24, at 8 p.m. (Brasília time), the room link arrives in your email and on your WhatsApp.", "Para não perder nada, procure o nosso e-mail e marque como importante.": "So you don't miss anything, find our email and mark it as important.", "Escreva o seu nome.": "Write your name.", "Confira o seu e-mail.": "Check your email.", "Coloque o WhatsApp com DDD.": "Enter a Brazilian WhatsApp number with area code.", "Marque a caixa para receber os avisos do evento.": "Tick the box to receive the event notices.", "Não conseguimos registrar a sua inscrição agora. Tente de novo em instantes.": "We couldn't register you right now. Please try again in a moment.", "Enviando…": "Sending…", "Preparando…": "Preparing…", "Escreva o seu nome no ingresso.": "Write your name on the ticket.", "Não foi possível gerar a imagem agora. Tente de novo.": "Couldn't create the image right now. Please try again.", "INGRESSO": "TICKET", "ORAYON · 24/11 às 20h · Tudo o que ficava entre a sua ideia e o seu resultado acaba de sair do caminho.": "ORAYON · Nov 24, 8 p.m. · Everything that stood between your idea and your result just got out of the way.", "Inscrição confirmada · ORAYON · 24/11 às 20h": "Registration confirmed · ORAYON · Nov 24, 8 p.m.", "Trabalho": "Work", "Vida pessoal": "Personal life", "Objetivos": "Goals", "Seu negócio": "Your business", "Aprender": "Learn"}, "it": {"O que mudou": "Cosa è cambiato", "No dia 24": "Il 24", "Para quem é": "Per chi è", "Como funciona": "Come funziona", "Quero receber o acesso ao dia 24": "Voglio l'accesso al 24", "Terça, 24/11 · 20h": "Martedì 24/11 · 20:00", "Tudo o que ficava entre a sua ideia e o seu resultado": "Tutto ciò che stava tra la tua idea e il tuo risultato", "acaba de sair do caminho.": "si è appena tolto di mezzo.", "Na terça, 24/11, a ORAYON mostra ao vivo como a inteligência artificial te dá autonomia para tirar os seus planos da cabeça e fazer virar realidade.": "Martedì 24/11, ORAYON mostra dal vivo come l'intelligenza artificiale ti dà l'autonomia per tirare fuori i tuoi progetti dalla testa e farli diventare realtà.", "Às 20h (horário de Brasília). Evento online, numa sala fechada para inscritos.": "Alle 20:00 (ora di Brasília). Evento online, in una sala riservata agli iscritti.", "Um negócio, um produto, um projeto, uma ideia que já devia estar no ar.": "Un'attività, un prodotto, un progetto, un'idea che dovrebbe già essere online.", "E quase sempre falta alguma coisa:": "E quasi sempre manca qualcosa:", "saber fazer": "saper fare", "ter tempo": "avere tempo", "ter dinheiro pra contratar quem sabe": "avere i soldi per assumere chi sa fare", "Seu plano": "Il tuo piano", "A realidade": "La realtà", "Tudo isso é": "Tutto questo è", "o meio.": "quello che sta in mezzo.", "Tudo o que fica entre o seu plano e a realidade.": "Tutto ciò che sta tra il tuo piano e la realtà.", "A inteligência artificial": "L'intelligenza artificiale", "mudou essa conta.": "ha cambiato le regole.", "Super Cérebro": "Super Brain", "o que importa pra você": "ciò che conta per te", "As melhores IAs do mundo": "Le migliori IA del mondo", "num só lugar": "in un unico posto", "O que temos para hoje?": "Cosa facciamo oggi?", "Qual a nossa missão de agora?": "Qual è la nostra missione adesso?", "Imagem": "Immagine", "Vídeo": "Video", "Áudio": "Audio", "Criar": "Crea", "Agentes": "Agenti", "Aplicativos": "App", "Especialistas": "Specialisti", "Trabalhar": "Lavora", "Escreva o roteiro do meu próximo vídeo": "Scrivi il copione del mio prossimo video", "Crie as artes do lançamento do meu produto": "Crea le grafiche per il lancio del mio prodotto", "Edite este vídeo para o meu Instagram": "Modifica questo video per il mio Instagram", "Grave a narração do meu anúncio": "Registra la voce del mio annuncio", "Organize tudo o que eu já aprovei": "Organizza tutto ciò che ho già approvato", "Responda quem chamou no meu Instagram": "Rispondi a chi mi ha scritto su Instagram", "Monte a proposta para o meu próximo cliente": "Prepara la proposta per il mio prossimo cliente", "Chame o especialista em vendas": "Chiama lo specialista di vendite", "Quem aprende a usar ganha uma autonomia que nunca existiu: tirar os planos da cabeça e fazer virar realidade, praticamente sem depender de ninguém.": "Chi impara a usarla ottiene un'autonomia mai esistita: tirare fuori i progetti dalla testa e farli diventare realtà, praticamente senza dipendere da nessuno.", "É esse poder que a": "È questo il potere che", "te ajuda a conquistar.": "ti aiuta a conquistare.", "Hub de imagem e vídeo": "Hub di immagini e video", "Hub de IAs de texto": "Hub di IA per testi", "Trilhas para aprender usando": "Percorsi per imparare facendo", "Franquia digital": "Franchising digitale", "Ao vivo · 24/11": "Dal vivo · 24/11", "O que você vai ver": "Cosa vedrai", "no dia 24": "il 24", "O Ecossistema ORAYON completo, ao vivo, e o que cada parte coloca nas suas mãos:": "L'Ecosistema ORAYON completo, dal vivo, e ciò che ogni parte ti mette in mano:", "O lugar onde fica tudo o que importa pra você, para qualquer objetivo, no trabalho ou na vida pessoal, compartilhado entre você e todas as IAs que trabalham com você e para você.": "Il posto dove resta tutto ciò che conta per te, per qualsiasi obiettivo, nel lavoro o nella vita personale, condiviso tra te e tutte le IA che lavorano con te e per te.", "O seu trabalho": "Il tuo lavoro", "✓ guardado": "✓ salvato", "A sua vida pessoal": "La tua vita personale", "Os seus objetivos": "I tuoi obiettivi", "O conteúdo do seu negócio pesquisado, escrito e criado no seu Claude.": "I contenuti della tua attività ricercati, scritti e creati nel tuo Claude.", "Pesquisado": "Ricercato", "Escrito": "Scritto", "Criado": "Creato", "Conversas com quem vai comprar, puxadas pela IA no seu Instagram.": "Conversazioni con chi sta per comprare, avviate dall'IA sul tuo Instagram.", "Hubs de texto, imagem e vídeo": "Hub di testi, immagini e video", "As melhores IAs do mundo num só lugar.": "Le migliori IA del mondo in un unico posto.", "As trilhas para aprender usando": "I percorsi per imparare facendo", "Introdução à IA, Claude na prática, criação de conteúdo e imagens e vídeos com IA.": "Introduzione all'IA, Claude in pratica, creazione di contenuti e immagini e video con l'IA.", "Introdução à IA": "Introduzione all'IA", "Claude na prática": "Claude in pratica", "Criação de conteúdo": "Creazione di contenuti", "Imagens e vídeos com IA": "Immagini e video con l'IA", "As formas de fazer parte": "I modi per farne parte", "Usar, assinar ou ser franqueado digital.": "Usare, abbonarsi o diventare franchisee digitale.", "Usar": "Usare", "Assinar": "Abbonarsi", "Ser franqueado digital": "Diventare franchisee digitale", "Para quem": "Per chi", "é.": "è.", "Pra quem tem um plano na cabeça": "Per chi ha un piano in testa", "e quer mais do que ver ele de pé: quer ver ele virar realidade.": "e vuole più che vederlo in piedi: vuole vederlo diventare realtà.", "Pra quem quer conquistar autonomia": "Per chi vuole conquistare autonomia", "e usar todo o potencial da inteligência artificial.": "e usare tutto il potenziale dell'intelligenza artificiale.", "Pra quem está começando agora": "Per chi sta iniziando adesso", "com a inteligência artificial e quer começar do jeito certo.": "con l'intelligenza artificiale e vuole iniziare nel modo giusto.", "Pra quem já usa": "Per chi la usa già", ", mas sente que ainda não aproveita tudo o que a IA pode dar.": ", ma sente di non sfruttare ancora tutto ciò che l'IA può dare.", "Como": "Come", "funciona.": "funziona.", "Você se inscreve agora.": "Ti iscrivi adesso.", "Recebe o link no dia do evento, por e-mail e WhatsApp.": "Ricevi il link il giorno dell'evento, via e-mail e WhatsApp.", "Terça, 24/11, às 20h (horário de Brasília), ao vivo no Zoom, numa sala fechada para inscritos.": "Martedì 24/11, alle 20:00 (ora di Brasília), dal vivo su Zoom, in una sala riservata agli iscritti.", "Ingresso": "Biglietto", "Ecossistema ORAYON, ao vivo": "Ecosistema ORAYON, dal vivo", "Data": "Data", "Terça, 24/11": "Martedì 24/11", "Horário": "Orario", "20h (Brasília)": "20:00 (Brasília)", "Onde": "Dove", "Ao vivo no Zoom": "Dal vivo su Zoom", "Acesso": "Accesso", "Link no dia do evento": "Link il giorno dell'evento", "Seu nome no ingresso": "Il tuo nome sul biglietto", "Baixar meu ingresso para os stories": "Scarica il mio biglietto per le storie", "Nome": "Nome", "E-mail": "E-mail", "WhatsApp com DDD": "WhatsApp (numero brasiliano, con prefisso)", "Quero receber os avisos do evento e as novidades da ORAYON por e-mail e WhatsApp.": "Voglio ricevere gli avvisi dell'evento e le novità di ORAYON via e-mail e WhatsApp.", "Política de Privacidade": "Informativa sulla privacy", "Ao vivo · 24/11 · 20h": "Dal vivo · 24/11 · 20:00", "A vida inteira te falaram que só depende de você.": "Per tutta la vita ti hanno detto che dipende solo da te.", "Era mentira.": "Era una bugia.", "Mas agora é verdade, graças à inteligência artificial.": "Ma adesso è vero, grazie all'intelligenza artificiale.", "E a ORAYON te mostra como.": "E ORAYON ti mostra come.", "Agora só depende de você.": "Adesso dipende solo da te.", "Agora só depende": "Adesso dipende solo", "de você.": "da te.", "Baixar imagem": "Scarica immagine", "Compartilhar": "Condividi", "No celular, se o download não abrir, toque e segure a imagem para salvar.": "Sul telefono, se il download non si apre, tieni premuta l'immagine per salvarla.", "Seções": "Sezioni", "Tela inicial da plataforma ORAYON: O que temos para hoje?": "Schermata iniziale della piattaforma ORAYON: Cosa facciamo oggi?", "Ingresso do evento": "Biglietto dell'evento", "ESCREVA SEU NOME AQUI": "SCRIVI QUI IL TUO NOME", "Seu nome": "Il tuo nome", "voce@email.com": "tu@email.com", "Inscrição no evento de 24/11": "Iscrizione all'evento del 24/11", "Fechar": "Chiudi", "Seu ingresso para os stories": "Il tuo biglietto per le storie", "Assistir ao vídeo": "Guarda il video", "Idioma": "Lingua", "Inscrição": "Iscrizione", "confirmada.": "confermata.", "A sua inscrição no Lançamento do Ecossistema ORAYON foi feita.": "La tua iscrizione al Lancio dell'Ecosistema ORAYON è stata completata.", "Até o dia 24": "Fino al 24", "A partir de agora, fique de olho no seu e-mail: é por lá que chegam os conteúdos exclusivos até o dia 24.": "Da adesso, tieni d'occhio la tua e-mail: è lì che arrivano i contenuti esclusivi fino al 24.", "nov · 20h": "nov · 20:00", "No dia do evento, terça, 24/11, às 20h (horário de Brasília), o link da sala chega no seu e-mail e no seu WhatsApp.": "Il giorno dell'evento, martedì 24/11, alle 20:00 (ora di Brasília), il link della sala arriva nella tua e-mail e sul tuo WhatsApp.", "Para não perder nada, procure o nosso e-mail e marque como importante.": "Per non perderti nulla, cerca la nostra e-mail e contrassegnala come importante.", "Escreva o seu nome.": "Scrivi il tuo nome.", "Confira o seu e-mail.": "Controlla la tua e-mail.", "Coloque o WhatsApp com DDD.": "Inserisci un numero WhatsApp brasiliano con prefisso.", "Marque a caixa para receber os avisos do evento.": "Seleziona la casella per ricevere gli avvisi dell'evento.", "Não conseguimos registrar a sua inscrição agora. Tente de novo em instantes.": "Non siamo riusciti a registrare la tua iscrizione adesso. Riprova tra poco.", "Enviando…": "Invio…", "Preparando…": "Preparazione…", "Escreva o seu nome no ingresso.": "Scrivi il tuo nome sul biglietto.", "Não foi possível gerar a imagem agora. Tente de novo.": "Non è stato possibile creare l'immagine adesso. Riprova.", "INGRESSO": "BIGLIETTO", "ORAYON · 24/11 às 20h · Tudo o que ficava entre a sua ideia e o seu resultado acaba de sair do caminho.": "ORAYON · 24/11 alle 20:00 · Tutto ciò che stava tra la tua idea e il tuo risultato si è appena tolto di mezzo.", "Inscrição confirmada · ORAYON · 24/11 às 20h": "Iscrizione confermata · ORAYON · 24/11 alle 20:00", "Trabalho": "Lavoro", "Vida pessoal": "Vita personale", "Objetivos": "Obiettivi", "Seu negócio": "La tua attività", "Aprender": "Impara"}, "es": {"O que mudou": "Qué cambió", "No dia 24": "El día 24", "Para quem é": "Para quién es", "Como funciona": "Cómo funciona", "Quero receber o acesso ao dia 24": "Quiero recibir el acceso al día 24", "Terça, 24/11 · 20h": "Martes, 24/11 · 20 h", "Tudo o que ficava entre a sua ideia e o seu resultado": "Todo lo que había entre tu idea y tu resultado", "acaba de sair do caminho.": "acaba de salir del camino.", "Na terça, 24/11, a ORAYON mostra ao vivo como a inteligência artificial te dá autonomia para tirar os seus planos da cabeça e fazer virar realidade.": "El martes 24/11, ORAYON muestra en vivo cómo la inteligencia artificial te da autonomía para sacar tus planes de la cabeza y hacerlos realidad.", "Às 20h (horário de Brasília). Evento online, numa sala fechada para inscritos.": "A las 20 h (hora de Brasilia). Evento online, en una sala cerrada para inscritos.", "Um negócio, um produto, um projeto, uma ideia que já devia estar no ar.": "Un negocio, un producto, un proyecto, una idea que ya debería estar en marcha.", "E quase sempre falta alguma coisa:": "Y casi siempre falta algo:", "saber fazer": "saber hacerlo", "ter tempo": "tener tiempo", "ter dinheiro pra contratar quem sabe": "tener dinero para contratar a quien sabe", "Seu plano": "Tu plan", "A realidade": "La realidad", "Tudo isso é": "Todo eso es", "o meio.": "lo que está en medio.", "Tudo o que fica entre o seu plano e a realidade.": "Todo lo que está entre tu plan y la realidad.", "A inteligência artificial": "La inteligencia artificial", "mudou essa conta.": "cambió las reglas.", "Super Cérebro": "Super Brain", "o que importa pra você": "lo que te importa", "As melhores IAs do mundo": "Las mejores IA del mundo", "num só lugar": "en un solo lugar", "O que temos para hoje?": "¿Qué tenemos para hoy?", "Qual a nossa missão de agora?": "¿Cuál es nuestra misión ahora?", "Imagem": "Imagen", "Vídeo": "Video", "Áudio": "Audio", "Criar": "Crear", "Agentes": "Agentes", "Aplicativos": "Aplicaciones", "Especialistas": "Especialistas", "Trabalhar": "Trabajar", "Escreva o roteiro do meu próximo vídeo": "Escribe el guion de mi próximo video", "Crie as artes do lançamento do meu produto": "Crea las artes del lanzamiento de mi producto", "Edite este vídeo para o meu Instagram": "Edita este video para mi Instagram", "Grave a narração do meu anúncio": "Graba la narración de mi anuncio", "Organize tudo o que eu já aprovei": "Organiza todo lo que ya aprobé", "Responda quem chamou no meu Instagram": "Responde a quien escribió en mi Instagram", "Monte a proposta para o meu próximo cliente": "Arma la propuesta para mi próximo cliente", "Chame o especialista em vendas": "Llama al especialista en ventas", "Quem aprende a usar ganha uma autonomia que nunca existiu: tirar os planos da cabeça e fazer virar realidade, praticamente sem depender de ninguém.": "Quien aprende a usarla gana una autonomía que nunca existió: sacar los planes de la cabeza y hacerlos realidad, prácticamente sin depender de nadie.", "É esse poder que a": "Ese es el poder que", "te ajuda a conquistar.": "te ayuda a conquistar.", "Hub de imagem e vídeo": "Hub de imagen y video", "Hub de IAs de texto": "Hub de IA de texto", "Trilhas para aprender usando": "Rutas para aprender usando", "Franquia digital": "Franquicia digital", "Ao vivo · 24/11": "En vivo · 24/11", "O que você vai ver": "Lo que vas a ver", "no dia 24": "el día 24", "O Ecossistema ORAYON completo, ao vivo, e o que cada parte coloca nas suas mãos:": "El Ecosistema ORAYON completo, en vivo, y lo que cada parte pone en tus manos:", "O lugar onde fica tudo o que importa pra você, para qualquer objetivo, no trabalho ou na vida pessoal, compartilhado entre você e todas as IAs que trabalham com você e para você.": "El lugar donde queda todo lo que te importa, para cualquier objetivo, en el trabajo o en la vida personal, compartido entre tú y todas las IA que trabajan contigo y para ti.", "O seu trabalho": "Tu trabajo", "✓ guardado": "✓ guardado", "A sua vida pessoal": "Tu vida personal", "Os seus objetivos": "Tus objetivos", "O conteúdo do seu negócio pesquisado, escrito e criado no seu Claude.": "El contenido de tu negocio investigado, escrito y creado en tu Claude.", "Pesquisado": "Investigado", "Escrito": "Escrito", "Criado": "Creado", "Conversas com quem vai comprar, puxadas pela IA no seu Instagram.": "Conversaciones con quien va a comprar, iniciadas por la IA en tu Instagram.", "Hubs de texto, imagem e vídeo": "Hubs de texto, imagen y video", "As melhores IAs do mundo num só lugar.": "Las mejores IA del mundo en un solo lugar.", "As trilhas para aprender usando": "Las rutas para aprender usando", "Introdução à IA, Claude na prática, criação de conteúdo e imagens e vídeos com IA.": "Introducción a la IA, Claude en la práctica, creación de contenido e imágenes y videos con IA.", "Introdução à IA": "Introducción a la IA", "Claude na prática": "Claude en la práctica", "Criação de conteúdo": "Creación de contenido", "Imagens e vídeos com IA": "Imágenes y videos con IA", "As formas de fazer parte": "Las formas de ser parte", "Usar, assinar ou ser franqueado digital.": "Usar, suscribirse o ser franquiciado digital.", "Usar": "Usar", "Assinar": "Suscribirse", "Ser franqueado digital": "Ser franquiciado digital", "Para quem": "Para quién", "é.": "es.", "Pra quem tem um plano na cabeça": "Para quien tiene un plan en la cabeza", "e quer mais do que ver ele de pé: quer ver ele virar realidade.": "y quiere más que verlo en pie: quiere verlo hacerse realidad.", "Pra quem quer conquistar autonomia": "Para quien quiere conquistar autonomía", "e usar todo o potencial da inteligência artificial.": "y usar todo el potencial de la inteligencia artificial.", "Pra quem está começando agora": "Para quien está empezando ahora", "com a inteligência artificial e quer começar do jeito certo.": "con la inteligencia artificial y quiere empezar de la forma correcta.", "Pra quem já usa": "Para quien ya la usa", ", mas sente que ainda não aproveita tudo o que a IA pode dar.": ", pero siente que todavía no aprovecha todo lo que la IA puede dar.", "Como": "Cómo", "funciona.": "funciona.", "Você se inscreve agora.": "Te inscribes ahora.", "Recebe o link no dia do evento, por e-mail e WhatsApp.": "Recibes el enlace el día del evento, por e-mail y WhatsApp.", "Terça, 24/11, às 20h (horário de Brasília), ao vivo no Zoom, numa sala fechada para inscritos.": "Martes, 24/11, a las 20 h (hora de Brasilia), en vivo por Zoom, en una sala cerrada para inscritos.", "Ingresso": "Entrada", "Ecossistema ORAYON, ao vivo": "Ecosistema ORAYON, en vivo", "Data": "Fecha", "Terça, 24/11": "Martes, 24/11", "Horário": "Hora", "20h (Brasília)": "20 h (Brasilia)", "Onde": "Dónde", "Ao vivo no Zoom": "En vivo por Zoom", "Acesso": "Acceso", "Link no dia do evento": "Enlace el día del evento", "Seu nome no ingresso": "Tu nombre en la entrada", "Baixar meu ingresso para os stories": "Descargar mi entrada para las historias", "Nome": "Nombre", "E-mail": "E-mail", "WhatsApp com DDD": "WhatsApp (número de Brasil, con código de área)", "Quero receber os avisos do evento e as novidades da ORAYON por e-mail e WhatsApp.": "Quiero recibir los avisos del evento y las novedades de ORAYON por e-mail y WhatsApp.", "Política de Privacidade": "Política de Privacidad", "Ao vivo · 24/11 · 20h": "En vivo · 24/11 · 20 h", "A vida inteira te falaram que só depende de você.": "Toda la vida te dijeron que solo depende de ti.", "Era mentira.": "Era mentira.", "Mas agora é verdade, graças à inteligência artificial.": "Pero ahora es verdad, gracias a la inteligencia artificial.", "E a ORAYON te mostra como.": "Y ORAYON te muestra cómo.", "Agora só depende de você.": "Ahora solo depende de ti.", "Agora só depende": "Ahora solo depende", "de você.": "de ti.", "Baixar imagem": "Descargar imagen", "Compartilhar": "Compartir", "No celular, se o download não abrir, toque e segure a imagem para salvar.": "En el celular, si la descarga no se abre, mantén presionada la imagen para guardarla.", "Seções": "Secciones", "Tela inicial da plataforma ORAYON: O que temos para hoje?": "Pantalla de inicio de la plataforma ORAYON: ¿Qué tenemos para hoy?", "Ingresso do evento": "Entrada del evento", "ESCREVA SEU NOME AQUI": "ESCRIBE TU NOMBRE AQUÍ", "Seu nome": "Tu nombre", "voce@email.com": "tu@email.com", "Inscrição no evento de 24/11": "Inscripción en el evento del 24/11", "Fechar": "Cerrar", "Seu ingresso para os stories": "Tu entrada para las historias", "Assistir ao vídeo": "Ver el video", "Idioma": "Idioma", "Inscrição": "Inscripción", "confirmada.": "confirmada.", "A sua inscrição no Lançamento do Ecossistema ORAYON foi feita.": "Tu inscripción en el Lanzamiento del Ecosistema ORAYON está hecha.", "Até o dia 24": "Hasta el día 24", "A partir de agora, fique de olho no seu e-mail: é por lá que chegam os conteúdos exclusivos até o dia 24.": "A partir de ahora, presta atención a tu e-mail: por ahí llegan los contenidos exclusivos hasta el día 24.", "nov · 20h": "nov · 20 h", "No dia do evento, terça, 24/11, às 20h (horário de Brasília), o link da sala chega no seu e-mail e no seu WhatsApp.": "El día del evento, martes 24/11, a las 20 h (hora de Brasilia), el enlace de la sala llega a tu e-mail y a tu WhatsApp.", "Para não perder nada, procure o nosso e-mail e marque como importante.": "Para no perderte nada, busca nuestro e-mail y márcalo como importante.", "Escreva o seu nome.": "Escribe tu nombre.", "Confira o seu e-mail.": "Revisa tu e-mail.", "Coloque o WhatsApp com DDD.": "Escribe un número de WhatsApp de Brasil con código de área.", "Marque a caixa para receber os avisos do evento.": "Marca la casilla para recibir los avisos del evento.", "Não conseguimos registrar a sua inscrição agora. Tente de novo em instantes.": "No pudimos registrar tu inscripción ahora. Inténtalo de nuevo en unos instantes.", "Enviando…": "Enviando…", "Preparando…": "Preparando…", "Escreva o seu nome no ingresso.": "Escribe tu nombre en la entrada.", "Não foi possível gerar a imagem agora. Tente de novo.": "No fue posible generar la imagen ahora. Inténtalo de nuevo.", "INGRESSO": "ENTRADA", "ORAYON · 24/11 às 20h · Tudo o que ficava entre a sua ideia e o seu resultado acaba de sair do caminho.": "ORAYON · 24/11 a las 20 h · Todo lo que había entre tu idea y tu resultado acaba de salir del camino.", "Inscrição confirmada · ORAYON · 24/11 às 20h": "Inscripción confirmada · ORAYON · 24/11 a las 20 h", "Trabalho": "Trabajo", "Vida pessoal": "Vida personal", "Objetivos": "Objetivos", "Seu negócio": "Tu negocio", "Aprender": "Aprender"}}, "esp": {"frase": {"en": "Everyone has a plan saved away.", "it": "Tutti hanno un piano nel cassetto.", "es": "Todo el mundo tiene un plan guardado."}, "verbos": {"en": {"pre": "Today it", "v": ["creates", "writes", "edits", "organizes", "assists", "sells"], "e": "and", "pos": "with you."}, "it": {"pre": "Oggi", "v": ["crea", "scrive", "modifica", "organizza", "risponde", "vende"], "e": "e", "pos": "con te."}, "es": {"pre": "Hoy", "v": ["crea", "escribe", "edita", "organiza", "atiende", "vende"], "e": "y", "pos": "contigo."}}}};
+window.ORY_LANG = 'pt';
+const t = s => (window.ORY_LANG !== 'pt' && I18N.d[window.ORY_LANG] && I18N.d[window.ORY_LANG][s]) || s;
+(() => {
+  const orig = new WeakMap(), ATR = ['placeholder', 'aria-label', 'alt', 'data-m'], tit = document.title;
+  const desc = document.querySelector('meta[name="description"]'), descO = desc && desc.content;
+  let fraseO = null, verbosO = null;
+  document.querySelectorAll('.embaralha:not([data-manual])').forEach(e => e.dataset.k = e.textContent);
+  function aplicar(l) {
+    if (!['pt', 'en', 'it', 'es'].includes(l)) l = 'pt';
+    window.ORY_LANG = l; document.documentElement.lang = { pt: 'pt-BR', en: 'en', it: 'it', es: 'es' }[l];
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentElement.closest('script,style,[data-pendente],#frase,#verbos,#missao,[data-k],.idioma-lista') ? 2 : 1 });
+    let n; while ((n = w.nextNode())) { if (!orig.has(n)) orig.set(n, n.nodeValue); const o = orig.get(n), k = o.trim(); if (k) n.nodeValue = o.replace(k, t(k)); }
+    document.querySelectorAll('[data-k]').forEach(e => { e.textContent = t(e.dataset.k); });
+    document.querySelectorAll('[placeholder],[aria-label],[alt],[data-m]').forEach(el => ATR.forEach(a => { if (!el.hasAttribute(a)) return; const c = 'o' + a.replace(/-/g, ''); if (!(c in el.dataset)) el.dataset[c] = el.getAttribute(a); el.setAttribute(a, t(el.dataset[c])); }));
+    const f = document.getElementById('frase');
+    if (f) { if (fraseO === null) fraseO = f.innerHTML; if (l === 'pt') f.innerHTML = fraseO; else { const p = I18N.esp.frase[l].split(' '); f.innerHTML = p.map((x, i) => i >= p.length - 2 ? '<span class="palavra"><b class="grad embaralha" data-manual>' + x + '</b></span>' : '<span class="palavra">' + x + '</span>').join(' '); } }
+    const v = document.getElementById('verbos');
+    if (v) { if (verbosO === null) verbosO = v.innerHTML; if (l === 'pt') v.innerHTML = verbosO; else { const c = I18N.esp.verbos[l], s = c.v.map(x => '<span>' + x + '</span>'); v.innerHTML = c.pre + ' ' + s.slice(0, -1).join(', ') + ' ' + c.e + ' ' + s[s.length - 1] + ' ' + c.pos; } }
+    document.title = t(tit); if (desc) desc.content = t(descO);
+    document.querySelectorAll('.idioma-atual').forEach(e => e.textContent = l.toUpperCase());
+    document.querySelectorAll('.idioma-lista [data-lang]').forEach(b => b.setAttribute('aria-current', b.dataset.lang === l));
+    try { localStorage.setItem('ory_idioma', l); } catch (_) {}
+    document.dispatchEvent(new CustomEvent('ory:idioma', { detail: l }));
+  }
+  const caixa = document.getElementById('idioma');
+  if (caixa) { const b = caixa.querySelector('.idioma-btn'), lista = caixa.querySelector('.idioma-lista');
+    const fecha = () => { lista.hidden = true; b.setAttribute('aria-expanded', 'false'); };
+    b.addEventListener('click', e => { e.stopPropagation(); const abre = lista.hidden; lista.hidden = !abre; b.setAttribute('aria-expanded', abre); });
+    lista.addEventListener('click', e => { const x = e.target.closest('[data-lang]'); if (x) { aplicar(x.dataset.lang); fecha(); b.focus(); } });
+    document.addEventListener('click', fecha); document.addEventListener('keydown', e => { if (e.key === 'Escape') fecha(); }); }
+  let ini = new URLSearchParams(location.search).get('lang'); try { ini = ini || localStorage.getItem('ory_idioma'); } catch (_) {}
+  if (ini && ini !== 'pt') aplicar(ini);
+  window.oryIdioma = aplicar;
+})();
+</script>
+</body>
+</html>
